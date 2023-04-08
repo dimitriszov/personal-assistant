@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.IO;
 using SimpleFileBrowser;
-using EasyUI.Dialogs;
 using MyEmail.Manager;
 
 public class FileBrowserTest : MonoBehaviour

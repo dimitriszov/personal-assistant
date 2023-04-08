@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using EasyUI.Popup;
 using System;
-using EasyUI.Dialogs;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine.SceneManagement;
