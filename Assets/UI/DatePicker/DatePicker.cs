@@ -313,11 +313,11 @@ namespace UI.Dates
         private void Update()
         {
             if (m_updateScheduled) _UpdateDisplay();
-            if (SelectedDate.HasValue)
+            /*if (SelectedDate.HasValue)
             {
                 Debug.Log(SelectedDate.Date.ToString());
                 text.text = SelectedDate.Date.ToString();
-            }
+            }*/
                 
         }
 
@@ -741,6 +741,8 @@ namespace UI.Dates
             {
                 Config.Events.OnDaySelected.Invoke(date);
             }
+
+            text.text = SelectedDate.Date.ToString();
 
             UpdateDisplay();
 

@@ -26,7 +26,7 @@ public class SaveManager : MonoBehaviour
        string textToSave = input.text;
        PlayerPrefs.SetString("SavedText", textToSave);
        PlayerPrefs.Save();
-        Debug.Log("Save");
+       Debug.Log("Save");
 
     }
 
