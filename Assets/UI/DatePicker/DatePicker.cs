@@ -12,6 +12,7 @@ namespace UI.Dates
     [ExecuteInEditMode]
     public class DatePicker : MonoBehaviour
     {
+        [SerializeField] public Text text;
         #region Dates
         [SerializeField]
         private DateSelectionMode m_DateSelectionMode = DateSelectionMode.SingleDate;
@@ -312,6 +313,12 @@ namespace UI.Dates
         private void Update()
         {
             if (m_updateScheduled) _UpdateDisplay();
+            if (SelectedDate.HasValue)
+            {
+                Debug.Log(SelectedDate.Date.ToString());
+                text.text = SelectedDate.Date.ToString();
+            }
+                
         }
 
         public void UpdateDisplay()
