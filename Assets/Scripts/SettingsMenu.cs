@@ -8,6 +8,19 @@ public class SettingsMenu : MonoBehaviour
 {
     Resolution[] resolutions;
     public Dropdown resDropdown;
+    public static SettingsMenu instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +71,4 @@ public class SettingsMenu : MonoBehaviour
     {
         Screen.fullScreen = isFullScreen;
     }
-
-    public void closeSettings() { Destroy(this.gameObject); }
-    
 }
