@@ -376,29 +376,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1799488765, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3759492157847217165, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1043
-      objectReference: {fileID: 0}
-    - target: {fileID: 3759492157847217165, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.000034332
-      objectReference: {fileID: 0}
-    - target: {fileID: 4346705858129103085, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4346705858129103085, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4346705858129103085, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
+    - target: {fileID: 1357214914, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7068121130134375372, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_Name
@@ -448,12 +428,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8014492983165706957, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8014492983165706957, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
-      propertyPath: m_AnchorMax.y
+    - target: {fileID: 9004343002868772464, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

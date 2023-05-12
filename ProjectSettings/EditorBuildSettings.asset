@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/EmailSceneV1.unity
     guid: c290f3aaf9ee1bc449229f453b74bfc2
   - enabled: 0
-    path: Assets/Scenes/Contact.unity
-    guid: 8399bee4ab8a12f44b2d29d6c9435f7e
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
