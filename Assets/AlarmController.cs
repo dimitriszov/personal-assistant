@@ -8,12 +8,13 @@ using TMPro;
 
 public class AlarmController : MonoBehaviour
 {
-    [SerializeField] private Text timeText;
-    [SerializeField] private TMP_InputField hoursInput, minutesInput, secondsInput;
-    [SerializeField] private TMP_Dropdown dropdown;
-    [SerializeField] private GameObject alarmPanel;
-    private bool isAlarmSet = false;
-    private DateTime alarmTime = DateTime.Today;
+ 
+    [SerializeField] public Text timeText;
+    [SerializeField] public TMP_InputField hoursInput, minutesInput, secondsInput;
+    [SerializeField] public TMP_Dropdown dropdown;
+    [SerializeField] public GameObject alarmPanel;
+    public bool isAlarmSet = false;
+    public DateTime alarmTime = DateTime.Today;
 
     // Start is called before the first frame update
     void Start()

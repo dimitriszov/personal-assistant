@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using System;
 
 public class AlarmClock : MonoBehaviour
 {
-    public TextMeshProUGUI timeText; // reference to the TextMeshProUGUI object where the time is displayed
+    public Text timeText; // reference to the TextMeshProUGUI object where the time is displayed
     public AudioSource alarmSound; // reference to the AudioSource component that plays the alarm sound
     public GameObject alarmActiveIndicator; // reference to the game object that indicates whether the alarm is active or not
 
