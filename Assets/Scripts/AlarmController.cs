@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using TMPro;
 
 
 public class AlarmController : MonoBehaviour
 {
  
     [SerializeField] public Text timeText;
-    [SerializeField] public TMP_InputField hoursInput, minutesInput, secondsInput;
-    [SerializeField] public TMP_Dropdown dropdown;
+    [SerializeField] public InputField hoursInput, minutesInput, secondsInput;
+    [SerializeField] public Dropdown dropdown;
     [SerializeField] public GameObject alarmPanel;
     public bool isAlarmSet = false;
     public DateTime alarmTime = DateTime.Today;

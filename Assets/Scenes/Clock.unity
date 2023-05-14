@@ -1036,11 +1036,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 179665150}
-  hoursInput: {fileID: 0}
-  minutesInput: {fileID: 0}
-  secondsInput: {fileID: 0}
+  hoursInput: {fileID: 1001347563}
+  minutesInput: {fileID: 265223836}
+  secondsInput: {fileID: 935371758}
   dropdown: {fileID: 0}
-  alarmPanel: {fileID: 0}
+  alarmPanel: {fileID: 191310743}
   isAlarmSet: 0
 --- !u!1 &480582144
 GameObject:
