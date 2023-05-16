@@ -1,12 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
-using System;
-using MyEmail.Manager;
-using System.Security.Cryptography.X509Certificates;
-using static UnityEditor.FilePathAttribute;
 
 namespace MyMap.Manager
 {
@@ -31,13 +26,18 @@ namespace MyMap.Manager
         // Start is called before the first frame update
         void Start()
         {
-            StartCoroutine(GetMap());
+            
         }
 
         // Update is called once per frame
         void Update()
         {
 
+        }
+
+        public void search()
+        {
+            StartCoroutine(GetMap());
         }
 
         // Getters
@@ -49,6 +49,7 @@ namespace MyMap.Manager
 
         // Setters
         public void setStartLocation(string location) { this.startLocation = location; }
+        public void setEndLocation(string location) { this.endLocation = location; }
         public void setZoomLevel(string zoomLevel) { this.zoomLevel = zoomLevel; }
         public void setMapSize(string mapSize) { this.mapSize = mapSize; }
 
