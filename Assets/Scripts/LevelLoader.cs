@@ -8,8 +8,6 @@ public class LevelLoader : MonoBehaviour
 {
     [SerializeField]
     public GameObject loadingPanel;
-    [SerializeField]
-    public GameObject settingsPanel;
     [SerializeField] 
     public  RectTransform fxHolder;
     [SerializeField] 
@@ -18,13 +16,13 @@ public class LevelLoader : MonoBehaviour
     public Text progressText;
     public void loadLevel(string name)
     {
+        loadingPanel.SetActive(true);
         StartCoroutine(LoadAsychronously(name));
+        loadingPanel.SetActive(false);
     }
 
     IEnumerator LoadAsychronously(string name)
     {
-        settingsPanel.SetActive(false);
-        loadingPanel.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(name);
         while (!operation.isDone)
         {
@@ -34,12 +32,12 @@ public class LevelLoader : MonoBehaviour
             Debug.Log(progress);
             yield return null;
         }
-        loadingPanel.SetActive(false);
     }
 
     public void closeApp()
     {
         Debug.Log("Closing App");
-        Popup.Show("Exit App", "Are you sure you want to exit?", "Yes", PopupColor.Red, () => Application.Quit());
+        // Popup.Show("Exit App", "Are you sure you want to exit?", "Yes", PopupColor.Red, () => Application.Quit());
+        Application.Quit();
     }
 }

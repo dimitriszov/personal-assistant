@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 101302412}
   - component: {fileID: 101302411}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: SendEmailButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,8 +423,20 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: EmailSceneV1
+          m_StringArgument: EmailScene
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 252221183}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &101302412
 MonoBehaviour:
@@ -620,6 +632,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240223656}
   m_CullTransparentMesh: 1
+--- !u!1 &252221183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 252221183, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+  m_PrefabInstance: {fileID: 438362168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &325945053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,8 +1244,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 23, y: -23}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 19, y: -11.799988}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &681920758
 GameObject:
@@ -2434,7 +2451,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551315835}
-  m_LocalRotation: {x: 0.064957686, y: -0.012864825, z: 0.00083750783, w: 0.99780476}
+  m_LocalRotation: {x: 0.064957686, y: -0.012864791, z: 0.00083750556, w: 0.99780476}
   m_LocalPosition: {x: 0, y: 0, z: -0.0000009536743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2512,7 +2529,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584003992}
-  m_LocalRotation: {x: 0.093509205, y: -0.012835538, z: 0.0012056243, w: 0.99553496}
+  m_LocalRotation: {x: 0.093509205, y: -0.012835547, z: 0.001205625, w: 0.99553496}
   m_LocalPosition: {x: 0, y: 0, z: -0.0000009536743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2916,8 +2933,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 23, y: -23}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 19, y: -11.8}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2015296775
 MonoBehaviour:
@@ -7883,11 +7900,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3c9aadfa2814b4f818adaae0172a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingPanel: {fileID: 0}
-  settingsPanel: {fileID: 0}
-  fxHolder: {fileID: 0}
-  circle: {fileID: 0}
-  progressText: {fileID: 0}
+  loadingPanel: {fileID: 2083501038}
+  fxHolder: {fileID: 325945054}
+  circle: {fileID: 240223658}
+  progressText: {fileID: 51086910}
 --- !u!4 &2051627376
 Transform:
   m_ObjectHideFlags: 0
