@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
+using EasyUI.Popup;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -40,6 +40,6 @@ public class LevelLoader : MonoBehaviour
     public void closeApp()
     {
         Debug.Log("Closing App");
-        Application.Quit();
+        Popup.Show("Exit App", "Are you sure you want to exit?", "Yes", PopupColor.Red, () => Application.Quit());
     }
 }

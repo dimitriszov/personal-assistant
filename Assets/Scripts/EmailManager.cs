@@ -1,15 +1,10 @@
 using System.Net;
 using System.Net.Mail;
 using UnityEngine;
-using UnityEngine.UI;
 using EasyUI.Popup;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using UnityEngine.SceneManagement;
-using UnityEngine.Windows;
 using Lean.Gui;
-using Unity.VisualScripting;
 
 namespace MyEmail.Manager
 {
