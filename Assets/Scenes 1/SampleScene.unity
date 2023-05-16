@@ -455,6 +455,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1152620988, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357214913, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 997.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346705858129103085, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346705858129103085, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346705858129103085, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674553556015267533, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7068121130134375372, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_Name
       value: SettingsObject
@@ -530,6 +554,18 @@ PrefabInstance:
     - target: {fileID: 7229710701662309036, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8014492983165706957, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8014492983165706957, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004343002868772464, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
@@ -702,9 +738,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: db3c9aadfa2814b4f818adaae0172a20, type: 3}
+      - m_Target: {fileID: 948396294}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: loadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
