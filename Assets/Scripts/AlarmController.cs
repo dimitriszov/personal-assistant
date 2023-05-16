@@ -31,9 +31,9 @@ public class AlarmController : MonoBehaviour
 
         bool isAM = hours < 12;
 
-        timeText.text = $"{hours % 12:D2}: {minutes:D2}: {seconds:D2} {(isAM ? "AM": "PM")}";
+        timeText.text = $"{hours % 12:D2}:{minutes:D2}:{seconds:D2} {(isAM ? "AM": "PM")}";
 
-        if(isAlarmSet && DateTime.Now > alarmTime)
+        if (isAlarmSet && DateTime.Now > alarmTime)
         {
             //Debug.Log("ALARM");
             alarmPanel.SetActive(true);
@@ -48,15 +48,17 @@ public class AlarmController : MonoBehaviour
         alarmTime = DateTime.Today;
 
         int hours;
-        if (dropdown.value == 0)
+       // hours = int.Parse(hoursInput.text);
+       if (dropdown.value == 0)
         {
             hours = int.Parse(hoursInput.text);
         }
-        else;
+        else
         {
             hours = int.Parse(hoursInput.text) + 12;
         }
-        TimeSpan ts = TimeSpan.Parse($"{hours}:{minutesInput.text}: {secondsInput.text}");
+      
+        TimeSpan ts = TimeSpan.Parse($"{hours}:{minutesInput.text}:{secondsInput.text}");
         alarmTime += ts;
 
         if (DateTime.Now >= alarmTime)
