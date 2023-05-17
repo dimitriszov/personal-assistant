@@ -599,7 +599,7 @@ GameObject:
   - component: {fileID: 591593757}
   - component: {fileID: 591593756}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Delete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 682351332}
   - component: {fileID: 682351331}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Add
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1711,7 +1711,7 @@ GameObject:
   - component: {fileID: 1160520911}
   - component: {fileID: 1160520910}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: List
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1770,7 +1770,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: List
+  m_Text: Contact List
 --- !u!222 &1160520911
 CanvasRenderer:
   m_ObjectHideFlags: 0
