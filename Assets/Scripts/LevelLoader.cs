@@ -11,11 +11,13 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] 
     public  RectTransform fxHolder;
     [SerializeField] 
-    public UnityEngine.UI.Image circle;
+    public Image circle;
     [SerializeField] 
     public Text progressText;
     public void loadLevel(string name)
     {
+        if (SceneManager.GetActiveScene().name == name)
+            return;
         loadingPanel.SetActive(true);
         StartCoroutine(LoadAsychronously(name));
         loadingPanel.SetActive(false);

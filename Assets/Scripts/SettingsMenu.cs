@@ -8,18 +8,30 @@ public class SettingsMenu : MonoBehaviour
 {
     Resolution[] resolutions;
     public Dropdown resDropdown;
-    public static SettingsMenu instance;
+    public AudioMixer mixer;
+    public Text titleText;
+    public string title;
+    //public static SettingsMenu instance;
 
     private void Awake()
     {
-        if (instance == null)
+        if (title != null)
+        {
+            titleText.text = title;
+        }
+        else 
+        {
+            titleText.text = "NO TITLE PROVIDED";
+        }
+        
+        /*if (instance == null)
             instance = this;
         else
         {
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);*/
     }
 
     // Start is called before the first frame update
@@ -48,8 +60,6 @@ public class SettingsMenu : MonoBehaviour
     {
         return Screen.currentResolution;
     }
-
-    public AudioMixer mixer;
 
     public void SetResolution(int resolutionIndex)
     {
