@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenu : MonoBehaviour
 {
     Resolution[] resolutions;
     public Dropdown resDropdown;
     public AudioMixer mixer;
+    public GameObject button;
     public Text titleText;
     public string title;
     //public static SettingsMenu instance;
@@ -23,6 +25,8 @@ public class SettingsMenu : MonoBehaviour
         {
             titleText.text = "NO TITLE PROVIDED";
         }
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            button.SetActive(false);
         
         /*if (instance == null)
             instance = this;

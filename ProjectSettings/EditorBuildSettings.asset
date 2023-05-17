@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/WeatherScene.unity
     guid: d5248eafec5cd534a9e47854cdc8f4e9
   - enabled: 1
-    path: Assets/Scenes/Example Scene.unity
+    path: Assets/Scenes/Diary.unity
     guid: 83cc9704932363f4fbad128377f479f5
+  - enabled: 1
+    path: Assets/Scenes/Contacts.unity
+    guid: 0e0905c280d860942948214eb29970db
   m_configObjects: {}
