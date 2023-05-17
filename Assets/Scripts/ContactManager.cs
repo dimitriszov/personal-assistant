@@ -22,15 +22,13 @@ public class ContactManager : MonoBehaviour
 
     }
 
-    public void RemoveContact()
+    public void DeleteContact()
     {
 
     }
 
-    public void UpdateContact()
-    {
-
-    }
+   // public void UpdateContact()
+   
 
 
 }
