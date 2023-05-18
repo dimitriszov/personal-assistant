@@ -9,12 +9,9 @@ public class ContactManager : MonoBehaviour
 
     [SerializeField] public List<Contact> contacts;
     [SerializeField] public InputField contactInputField;
-    // Start is called before the first frame update
 
    
-
-
-    private void Start()
+    public void Start()
     {
         contacts = new List<Contact>();
     }
@@ -30,6 +27,71 @@ public class ContactManager : MonoBehaviour
             }
         }
         return searchResults;
+    }
+
+    public void AddContact()
+    {
+        string contactInfo = contactInputField.text;
+        Contact newContact = ParseContactInfo(contactInfo);
+        if (newContact != null)
+        {
+            contacts.Add(newContact);
+            SaveContacts();
+        }
+        contactInputField.text = string.Empty; // Clear the input field
+    }
+
+    public Contact ParseContactInfo(string contactInfo)
+    {
+        string[] contactData = contactInfo.Split(';'); // Assuming contact information is separated by semicolons
+        if (contactData.Length >= 2) // Assuming contact information should contain at least name, and phone number
+        {
+            string name = contactData[0].Trim();
+            string phoneNumber = contactData[2].Trim();
+
+            // Create and return a new Contact object
+            return new Contact(name, phoneNumber);
+        }
+        else
+        {
+            Debug.LogError("Invalid contact information: " + contactInfo);
+            return null;
+        }
+    }
+
+    public void SaveContacts()
+    {
+        // Convert the contacts list to JSON format
+        string contactsData = JsonUtility.ToJson(contacts);
+
+        // Save the contacts data to PlayerPrefs or your chosen storage mechanism
+        PlayerPrefs.SetString("ContactsData", contactsData);
+        PlayerPrefs.Save();
+    }
+
+    public void DeleteContact()
+    {
+        string contactInfo = contactInputField.text;
+        Contact contactToDelete = FindContact(contactInfo);
+        if (contactToDelete != null)
+        {
+            contacts.Remove(contactToDelete);
+            // Save or update the contacts in the storage mechanism
+            SaveContacts();
+        }
+        contactInputField.text = string.Empty;
+    }
+
+    public Contact FindContact(string contactInfo)
+    {
+        foreach (Contact contact in contacts)
+        {
+            if (contact.Name.ToLower() == contactInfo.ToLower() || contact.PhoneNumber == contactInfo)
+            {
+                return contact;
+            }
+        }
+        return null; // Contact not found
     }
 
 }
