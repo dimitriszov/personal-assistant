@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
+using UnityEngine.UI;
+using System.Net.Http;
+using System.IO;
 
 public class GetWeatherInfo : MonoBehaviour
 {
+    public Text cityText, tempText, conditionText, humidityText, pressureText;
+
+    private HttpClient httpClient;
+    [SerializeField] public RawImage image;
     public string units;
     #region Weather API Key
     const string OpenWeatherAPIKey = "52402191a5aeba7fe2cfd6e4633968a6";
@@ -145,12 +152,12 @@ public class GetWeatherInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        httpClient = new HttpClient();
         if (string.IsNullOrEmpty(OpenWeatherAPIKey))
         {
             Debug.LogError("No API key set for https://openweathermap.org/");
             return;
         }
-
         StartCoroutine(GetWeather_Phase1_PublicIP());
     }
 
@@ -159,16 +166,29 @@ public class GetWeatherInfo : MonoBehaviour
     {
         if (Phase == EPhase.Succeeded && !ShownWeatherInfo)
         {
+            var sb = new System.Text.StringBuilder();
             ShownWeatherInfo = true;
 
             Debug.Log($"Weather info for {WeatherData.CityName}");
+            cityText.text = WeatherData.CityName;
             Debug.Log($"Temperature: {WeatherData.KeyInfo.Temperature}");
+            tempText.text = WeatherData.KeyInfo.Temperature.ToString();
             Debug.Log($"Humidity: {WeatherData.KeyInfo.Humidity}");
+            humidityText.text = WeatherData.KeyInfo.Humidity.ToString();
             Debug.Log($"Pressure: {WeatherData.KeyInfo.Pressure}");
+            pressureText.text = WeatherData.KeyInfo.Pressure.ToString();
+            string pathFile = "Assets/Images/Weather/01d.png";
             foreach (var condition in WeatherData.WeatherConditions)
             {
                 Debug.Log($"{condition.Group}: {condition.Description}");
+                sb.Append(condition.Group + ": " + condition.Description + "\n");
+                pathFile = $"Assets/Images/Weather/{condition.Icon}.png";
             }
+            conditionText.text = sb.ToString();
+            var rawData = System.IO.File.ReadAllBytes(pathFile);
+            Texture2D tex = new Texture2D(2, 2); // Create an empty Texture; size doesn't matter (she said)
+            tex.LoadImage(rawData);
+            image.texture = tex;
         }
     }
 
