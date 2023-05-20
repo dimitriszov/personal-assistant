@@ -9,8 +9,11 @@ public class ContactManager : MonoBehaviour
 
     [SerializeField] public List<Contact> contacts;
     [SerializeField] public InputField contactInputField;
+    [SerializeField] public InputField contactInputFieldNumber;
 
-   
+
+
+
     public void Start()
     {
         contacts = new List<Contact>();
@@ -32,6 +35,8 @@ public class ContactManager : MonoBehaviour
     public void AddContact()
     {
         string contactInfo = contactInputField.text;
+        string contactInfoN = contactInputFieldNumber.text;
+
         Contact newContact = ParseContactInfo(contactInfo);
         if (newContact != null)
         {
@@ -39,11 +44,12 @@ public class ContactManager : MonoBehaviour
             SaveContacts();
         }
         contactInputField.text = string.Empty; // Clear the input field
+        contactInputFieldNumber.text = string.Empty; // Clear the input field
     }
 
     public Contact ParseContactInfo(string contactInfo)
     {
-        string[] contactData = contactInfo.Split(';'); // Assuming contact information is separated by semicolons
+           string[] contactData = contactInfo.Split(';'); // Assuming contact information is separated by semicolons
         if (contactData.Length >= 2) // Assuming contact information should contain at least name, and phone number
         {
             string name = contactData[0].Trim();
