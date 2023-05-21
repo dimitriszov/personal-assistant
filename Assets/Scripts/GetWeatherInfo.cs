@@ -6,12 +6,13 @@ using Newtonsoft.Json;
 using UnityEngine.UI;
 using System.Net.Http;
 using System.IO;
+using System;
 
 public class GetWeatherInfo : MonoBehaviour
 {
     public Text cityText, tempText, conditionText, humidityText, pressureText;
-
-    private HttpClient httpClient;
+    public Material[] skyboxes;
+    public ParticleSystem snow, rain;
     [SerializeField] public RawImage image;
     public string units;
     #region Weather API Key
@@ -149,10 +150,14 @@ public class GetWeatherInfo : MonoBehaviour
     OpenWeatherResponse WeatherData;
     bool ShownWeatherInfo = false;
 
+    private void Awake()
+    {
+        rain.Stop();
+        snow.Stop();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        httpClient = new HttpClient();
         if (string.IsNullOrEmpty(OpenWeatherAPIKey))
         {
             Debug.LogError("No API key set for https://openweathermap.org/");
@@ -164,6 +169,7 @@ public class GetWeatherInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        string iconCode = "";
         if (Phase == EPhase.Succeeded && !ShownWeatherInfo)
         {
             var sb = new System.Text.StringBuilder();
@@ -182,10 +188,39 @@ public class GetWeatherInfo : MonoBehaviour
             {
                 Debug.Log($"{condition.Group}: {condition.Description}");
                 sb.Append(condition.Group + ": " + condition.Description + "\n");
-                pathFile = $"Assets/Images/Weather/{condition.Icon}.png";
+                iconCode = condition.Icon;
+                pathFile = $"Assets/Images/Weather/Icons/{condition.Icon}.png";
             }
             conditionText.text = sb.ToString();
-            var rawData = System.IO.File.ReadAllBytes(pathFile);
+            var rawData = File.ReadAllBytes(pathFile);
+            if(iconCode.Equals("03d"))
+            {
+                changeSkyBox(1);
+            }
+            switch (iconCode)
+            {
+                case "01d":
+                    changeSkyBox(0);
+                    break;
+                case "02d":
+                case "03d":
+                case "04d":
+                    changeSkyBox(2);
+                    break;
+                case "09d":
+                case "10d":
+                case "11d":
+                    changeSkyBox(1);
+                    rain.Play();
+                    break;
+                case "13d":
+                    changeSkyBox(1);
+                    snow.Play();
+                    break;
+                case "50d":
+                    changeSkyBox(1);
+                    break;
+            }
             Texture2D tex = new Texture2D(2, 2); // Create an empty Texture; size doesn't matter (she said)
             tex.LoadImage(rawData);
             image.texture = tex;
@@ -199,7 +234,7 @@ public class GetWeatherInfo : MonoBehaviour
         // attempt to retrieve our public IP address
         using (UnityWebRequest request = UnityWebRequest.Get(URL_GetPublicIP))
         {
-            request.timeout = 10;
+            request.timeout = 20;
             yield return request.SendWebRequest();
 
             // did the request succeed?
@@ -274,5 +309,10 @@ public class GetWeatherInfo : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    public void changeSkyBox(int index)
+    {
+        RenderSettings.skybox = skyboxes[index];
     }
 }
