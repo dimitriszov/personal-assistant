@@ -4,9 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using TMPro;
 
 public class TrafficManager : MonoBehaviour
 {
+    [SerializeField]
+    public TextMeshProUGUI textTraffic;
     public enum EPhase
     {
         NotStarted,
@@ -113,7 +116,7 @@ public class TrafficManager : MonoBehaviour
         // attempt to retrieve our public IP address
         using (UnityWebRequest request = UnityWebRequest.Get(URL_GetPublicIP))
         {
-            request.timeout = 10;
+            request.timeout = 20;
             yield return request.SendWebRequest();
 
             // did the request succeed?
@@ -173,8 +176,8 @@ public class TrafficManager : MonoBehaviour
             if (request.result == UnityWebRequest.Result.Success)
             {
                 trafficResult = JsonConvert.DeserializeObject<TrafficResult>(request.downloadHandler.text);
-                Debug.Log(trafficResult.ResourceSets[0].Resources[0].Description);
                 //Debug.Log(request.downloadHandler.text);
+                printTraffic();
             }
             else
             {
@@ -184,7 +187,7 @@ public class TrafficManager : MonoBehaviour
         }
     }
 
-    public string GetBoundingBox(string lat, string lon, double radius = 25)
+    public string GetBoundingBox(string lat, string lon, double radius = 10)
     {
         double latitude = double.Parse(lat, System.Globalization.CultureInfo.InvariantCulture);
         double longitude = double.Parse(lon, System.Globalization.CultureInfo.InvariantCulture);
@@ -197,5 +200,15 @@ public class TrafficManager : MonoBehaviour
         double min_longitude = longitude - (180 / Math.PI) * delta_lon;
         double max_longitude = longitude + (180 / Math.PI) * delta_lon;
         return min_latitude.ToString("F") + "," + min_longitude.ToString("F") + "," + max_latitude.ToString("F") + "," + max_longitude.ToString("F");
+    }
+
+    public void printTraffic()
+    {
+        string result = "<align=\"center\"><b>Traffic Info</b>\n<align=\"left\">";
+        foreach(Resource res in trafficResult.ResourceSets[0].Resources)
+        {
+            result += res.Description + "\n";
+        }
+        textTraffic.text = result;
     }
 }
