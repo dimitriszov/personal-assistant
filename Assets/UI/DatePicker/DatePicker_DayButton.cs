@@ -12,7 +12,7 @@ namespace UI.Dates
     {
         public DateTime Date;
         public DatePickerDayButtonType Type;
-        
+        [SerializeField] public Text dayText;
 
 
         [HideInInspector]
@@ -24,6 +24,8 @@ namespace UI.Dates
             
 
             DatePicker.DayButtonClicked(Date);
+          //  string selectedDay = gameObject.name;
+           // CheckNoteForDay(selectedDay);
         }
         
         public void MouseOver()
@@ -32,5 +34,13 @@ namespace UI.Dates
 
             DatePicker.DayButtonMouseOver(Date);
         }
+
+       // public void OnButtonClick()
+      //  {
+      //      string selectedDay = dayText.text;
+      //      CheckNoteForDay(selectedDay);
+      //  }
+
+       
     }
 }
