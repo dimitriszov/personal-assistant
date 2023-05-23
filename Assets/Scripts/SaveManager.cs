@@ -9,7 +9,7 @@ public class SaveManager : MonoBehaviour
 {
     [SerializeField] public Text text;
     [SerializeField] public InputField input;
-
+    [SerializeField] public GameObject Panel;
 
     public string savedTextKey = "SavedText";
     void Start()
