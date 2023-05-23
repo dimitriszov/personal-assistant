@@ -160,7 +160,7 @@ namespace UI.Dates
                 return _buttonPool;
             }
         }
-
+        
         public RectTransform Ref_Viewport = null;
 
         public bool IsVisible
@@ -678,11 +678,15 @@ namespace UI.Dates
 
         public void ClearWeekDayHeaders()
         {
-            var weekDayHeaders = Ref_DayTable.GetComponentsInChildren<DatePicker_DayHeader>();
-            foreach (var header in weekDayHeaders)
+            if (Ref_DayTable != null)
             {
-                DestroyImmediate(header.gameObject);
+                var weekDayHeaders = Ref_DayTable.GetComponentsInChildren<DatePicker_DayHeader>();
+                foreach (var header in weekDayHeaders)
+                {
+                    DestroyImmediate(header.gameObject);
+                }
             }
+
         }
 
         private DatePickerDayButtonType GetDayTypeForDate(DateTime date)
@@ -714,6 +718,7 @@ namespace UI.Dates
         /// Called by DayButton
         /// </summary>
         /// <param name="date"></param>
+        [SerializeField] public GameObject Panel;
         public void DayButtonClicked(DateTime date)
         {
             if (DateSelectionMode == Dates.DateSelectionMode.SingleDate)
@@ -750,6 +755,8 @@ namespace UI.Dates
             // but that would mean setting up an observable list, which is an added
             // complication we don't need right now
             UpdateInputFieldText();
+
+            Panel.SetActive(true);
         }
 
         public void UpdateInputFieldText()
