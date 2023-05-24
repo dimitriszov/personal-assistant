@@ -12,7 +12,20 @@ public class ContactManager : MonoBehaviour
     [SerializeField] public InputField contactInputFieldNumber;
     [SerializeField] public Text searchResultsText;
 
+    [System.Serializable]
+    public class Contact
+    {
+        public string Name;
+        public string PhoneNumber;
 
+        public Contact(string name, string phoneNumber)
+        {
+            Name = name;
+            PhoneNumber = phoneNumber;
+        }
+
+
+    }
 
     public void Start()
     {
@@ -34,10 +47,27 @@ public class ContactManager : MonoBehaviour
 
     public void AddContact()
     {
-        string contactInfo = contactInputField.text;
-        string contactInfoN = contactInputFieldNumber.text;
+        if (contactInputField == null || contactInputFieldNumber == null)
+        {
+            Debug.LogError("InputField references are not assigned.");
+            return;
+        }
+      
+        string name = contactInputField.text;
+        string phoneNumber = contactInputFieldNumber.text;
+        Contact newContact = new Contact(name, phoneNumber);
+        if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(phoneNumber))
+        {
+            contacts.Add(newContact);
+            SaveContacts();
+            // Refresh the contact search list
+            DisplaySearchResults("");
+        }
+        /* string contactInfo = contactInputField.text;
+         string contactInfoN = contactInputFieldNumber.text;
 
-        Contact newContact = ParseContactInfo(contactInfo);
+       Contact newContact = ParseContactInfo(contactInfo);
+
         if (newContact != null)
         {
             contacts.Add(newContact);
@@ -45,6 +75,7 @@ public class ContactManager : MonoBehaviour
             // Refresh the contact search list
             DisplaySearchResults("");
         }
+      */
         contactInputField.text = string.Empty; // Clear the input field
         contactInputFieldNumber.text = string.Empty; // Clear the input field
     }
@@ -98,6 +129,8 @@ public class ContactManager : MonoBehaviour
     {
         foreach (Contact contact in contacts)
         {
+            // if (contact.Name.ToLower() == contactInfo.ToLower()  ||ontact.PhoneNumber == contactInfo)
+
             if (contact.Name.ToLower() == contactInfo.ToLower() || contact.PhoneNumber == contactInfo)
             {
                 return contact;
@@ -109,8 +142,27 @@ public class ContactManager : MonoBehaviour
 
     public void DisplaySearchResults(string name)
     {
+
+        if (searchResultsText == null)
+        {
+            Debug.LogError("Text reference is not assigned.");
+            return;
+        }
         List<Contact> searchResults = SearchContactsByName(name);
 
+        if (string.IsNullOrEmpty(name))
+        {
+            // If the name is empty or null, display all contacts
+            searchResults = contacts;
+        }
+        else
+        {
+            // Perform the search by name
+            searchResults = SearchContactsByName(name);
+        }
+
+        // Clear the search results UI
+        searchResultsText.text = string.Empty;
         // Clear the search results UI
         searchResultsText.text = string.Empty;
 
@@ -122,17 +174,4 @@ public class ContactManager : MonoBehaviour
     }
 
 }
-[System.Serializable]
-public class Contact
-    {
-        public string Name;
-        public string PhoneNumber;
 
-        public Contact(string name, string phoneNumber)
-        {
-            Name = name;
-            PhoneNumber = phoneNumber;
-        }
-
-
-    }
