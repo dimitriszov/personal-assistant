@@ -1260,7 +1260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &489781033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1339,6 +1339,7 @@ MonoBehaviour:
   contacts: []
   contactInputField: {fileID: 1520387318}
   contactInputFieldNumber: {fileID: 0}
+  searchResultsText: {fileID: 0}
 --- !u!1 &565537983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,6 +1438,7 @@ MonoBehaviour:
   contacts: []
   contactInputField: {fileID: 1953392851}
   contactInputFieldNumber: {fileID: 1808134667}
+  searchResultsText: {fileID: 0}
 --- !u!1 &591593754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,6 +1711,7 @@ MonoBehaviour:
   contacts: []
   contactInputField: {fileID: 0}
   contactInputFieldNumber: {fileID: 0}
+  searchResultsText: {fileID: 0}
 --- !u!4 &699664841
 Transform:
   m_ObjectHideFlags: 0
@@ -5084,7 +5087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2071393218
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5163,6 +5166,7 @@ MonoBehaviour:
   contacts: []
   contactInputField: {fileID: 1662536833}
   contactInputFieldNumber: {fileID: 226067703}
+  searchResultsText: {fileID: 0}
 --- !u!1001 &2132583121
 PrefabInstance:
   m_ObjectHideFlags: 0
