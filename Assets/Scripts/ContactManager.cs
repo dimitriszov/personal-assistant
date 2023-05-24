@@ -75,6 +75,7 @@ public class ContactManager : MonoBehaviour
         // Save the contacts data to PlayerPrefs or your chosen storage mechanism
         PlayerPrefs.SetString("ContactsData", contactsData);
         PlayerPrefs.Save();
+        Debug.Log("Save");
     }
 
     public void DeleteContact()
@@ -90,6 +91,7 @@ public class ContactManager : MonoBehaviour
             DisplaySearchResults("");
         }
         contactInputField.text = string.Empty;
+        Debug.Log("Delete");
     }
 
     public Contact FindContact(string contactInfo)
