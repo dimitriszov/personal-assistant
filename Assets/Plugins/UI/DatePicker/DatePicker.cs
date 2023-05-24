@@ -747,7 +747,8 @@ namespace UI.Dates
                 Config.Events.OnDaySelected.Invoke(date);
             }
 
-            text.text = SelectedDate.Date.ToString();
+            text.text = SelectedDate.Date.ToString(Config.Format.DateFormat);
+            Panel.SetActive(true);
 
             UpdateDisplay();
 
@@ -755,8 +756,6 @@ namespace UI.Dates
             // but that would mean setting up an observable list, which is an added
             // complication we don't need right now
             UpdateInputFieldText();
-
-            Panel.SetActive(true);
         }
 
         public void UpdateInputFieldText()
@@ -814,10 +813,12 @@ namespace UI.Dates
             if (Ref_DatePickerTransform.gameObject.activeInHierarchy)
             {
                 Hide();
+                Panel.SetActive(true);
             }
             else
             {
                 Show();
+                Panel.SetActive(false);
             }
         }
 
