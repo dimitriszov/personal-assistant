@@ -8,40 +8,35 @@ using System;
 
 public class SaveManager : MonoBehaviour
 {
-    [SerializeField] public Text text;
+    [SerializeField] public Text dateText;
     [SerializeField] public InputField input;
     [SerializeField] public GameObject Panel;
     public string savedTextKey = "SavedText";
-    public string previousDateText = ""; 
+    private string previousDateText = "Hello";
 
-    private Dictionary<DateTime, List<string>> calendarData = new Dictionary<DateTime, List<string>>();
+    private Dictionary<string, List<string>> calendarData = new Dictionary<string, List<string>>();
 
 
 
     void Start()
     {
+        previousDateText = dateText.text;
 
-        previousDateText = text.text;
-        string savedText = PlayerPrefs.GetString("SavedText");
-        input.text = savedText;
-    
+        //string savedText = PlayerPrefs.GetString("SavedText");
+        //input.text = savedText;
     }
 
     void Update()
     {
-        if (text.text != previousDateText)
+        if (dateText.text != previousDateText)
         {
-            DateTime selectedDate;
-            if (DateTime.TryParse(text.text, out selectedDate))
-            {
-                List<string> jobs = GetJobsForDate(selectedDate);
-                UpdateInputField(jobs);
-            }
+            List<string> jobs = GetJobsForDate(dateText.text);
+            UpdateInputField(jobs);
 
-            previousDateText = text.text;
+            previousDateText = dateText.text;
         }
     }
-    private List<string> GetJobsForDate(DateTime selectedDate)
+    private List<string> GetJobsForDate(string selectedDate)
     {
         if (calendarData.ContainsKey(selectedDate))
         {
@@ -67,23 +62,19 @@ public class SaveManager : MonoBehaviour
     public void saveSchedule()
     {
         string textToSave = input.text;
-        PlayerPrefs.SetString("SavedText", textToSave);
-        PlayerPrefs.Save();
+        //PlayerPrefs.SetString("SavedText", textToSave);
+        //PlayerPrefs.Save();
         Debug.Log("Save");
 
-        DateTime currentDate = DateTime.Now;
-        // Create the formatted note string with date and text
-        string note = string.Format("[{0}] {1}", currentDate.ToString(), textToSave);
-
-        text.text = textToSave;
+        string currentDate = dateText.text;
         AddJob(currentDate, textToSave);
-       // input.text = ""; // Clear the input field
+        // input.text = ""; // Clear the input field
 
     }
     public void LoadSchedule()
     {
         string savedText = PlayerPrefs.GetString(savedTextKey);
-        text.text = savedText;
+        dateText.text = savedText;
         Debug.Log("Load");
     }
 
@@ -114,7 +105,7 @@ public class SaveManager : MonoBehaviour
             Debug.Log("No note found for " + day);
         }
     }
-    public void AddJob(DateTime selectedDate, string job)
+    public void AddJob(string selectedDate, string job)
     {
         if (calendarData.ContainsKey(selectedDate))
         {
@@ -136,11 +127,11 @@ public class SaveManager : MonoBehaviour
         if (PlayerPrefs.HasKey("CalendarData"))
         {
             string jsonData = PlayerPrefs.GetString("CalendarData");
-            calendarData = JsonUtility.FromJson<Dictionary<DateTime, List<string>>>(jsonData);
+            calendarData = JsonUtility.FromJson<Dictionary<string, List<string>>>(jsonData);
         }
         else
         {
-            calendarData = new Dictionary<DateTime, List<string>>();
+            calendarData = new Dictionary<string, List<string>>();
         }
     }
 
