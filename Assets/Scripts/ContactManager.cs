@@ -10,7 +10,7 @@ public class ContactManager : MonoBehaviour
     [SerializeField] public List<Contact> contacts;
     [SerializeField] public InputField contactInputField;
     [SerializeField] public InputField contactInputFieldNumber;
-
+    [SerializeField] public Text searchResultsText;
 
 
 
@@ -42,6 +42,8 @@ public class ContactManager : MonoBehaviour
         {
             contacts.Add(newContact);
             SaveContacts();
+            // Refresh the contact search list
+            DisplaySearchResults("");
         }
         contactInputField.text = string.Empty; // Clear the input field
         contactInputFieldNumber.text = string.Empty; // Clear the input field
@@ -53,7 +55,7 @@ public class ContactManager : MonoBehaviour
         if (contactData.Length >= 2) // Assuming contact information should contain at least name, and phone number
         {
             string name = contactData[0].Trim();
-            string phoneNumber = contactData[2].Trim();
+            string phoneNumber = contactData[1].Trim();
 
             // Create and return a new Contact object
             return new Contact(name, phoneNumber);
@@ -84,6 +86,8 @@ public class ContactManager : MonoBehaviour
             contacts.Remove(contactToDelete);
             // Save or update the contacts in the storage mechanism
             SaveContacts();
+            // Refresh the contact search list
+            DisplaySearchResults("");
         }
         contactInputField.text = string.Empty;
     }
@@ -100,6 +104,21 @@ public class ContactManager : MonoBehaviour
         return null; // Contact not found
     }
 
+
+    public void DisplaySearchResults(string name)
+    {
+        List<Contact> searchResults = SearchContactsByName(name);
+
+        // Clear the search results UI
+        searchResultsText.text = string.Empty;
+
+        // Display the search results
+        foreach (Contact result in searchResults)
+        {
+            searchResultsText.text += result.Name + ": " + result.PhoneNumber + "\n";
+        }
+    }
+
 }
 [System.Serializable]
 public class Contact
@@ -112,4 +131,6 @@ public class Contact
             Name = name;
             PhoneNumber = phoneNumber;
         }
+
+
     }
