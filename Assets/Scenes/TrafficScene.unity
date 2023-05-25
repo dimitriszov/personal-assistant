@@ -301,7 +301,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &685957996
+--- !u!1001 &715950896
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -310,7 +310,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: title
-      value: Traffic info
+      value: "\u03B7\u03B8\u03C5\u03C6\u03B4\u03C3\u03B3\u03B8\u03C5\u03B4\u03C3"
       objectReference: {fileID: 0}
     - target: {fileID: 3912963876301809393, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_Pivot.x
@@ -614,3 +614,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caeaded4350fcaa499b0d2aa29146df4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textTraffic: {fileID: 0}
