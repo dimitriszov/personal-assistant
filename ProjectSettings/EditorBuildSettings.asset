@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SearchScene.unity
     guid: 826759f198e3e614abd40ccb0422bf22
+  - enabled: 1
+    path: Assets/Scenes/Jobs.unity
+    guid: 6fbcc572ba3ca5c488bb42a989e14097
   m_configObjects: {}

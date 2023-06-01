@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
-
-
+using System.IO;
+using Newtonsoft.Json;
 
 public class SaveManager : MonoBehaviour
 {
@@ -115,26 +114,24 @@ public class SaveManager : MonoBehaviour
         {
             calendarData[selectedDate] = new List<string> { job };
         }
+        SaveCalendarData();
     }
     public void SaveCalendarData()
     {
-        string jsonData = JsonUtility.ToJson(calendarData);
-        PlayerPrefs.SetString("CalendarData", jsonData);
-        PlayerPrefs.Save();
+        string json = JsonConvert.SerializeObject(calendarData, Formatting.Indented);
+        File.WriteAllText("calendar.json", json);
     }
     public void LoadCalendarData()
     {
-        if (PlayerPrefs.HasKey("CalendarData"))
+        if (File.Exists("calendar.json"))
         {
-            string jsonData = PlayerPrefs.GetString("CalendarData");
-            calendarData = JsonUtility.FromJson<Dictionary<string, List<string>>>(jsonData);
+            string json = File.ReadAllText("calendar.json");
+            calendarData = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(json);
         }
         else
         {
-            calendarData = new Dictionary<string, List<string>>();
+            Debug.LogWarning("Dictionary file not found.");
         }
     }
-
-
 }
 

@@ -2,22 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Networking;
 using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using static Unity.VisualScripting.Icons;
 
 public class TranslateManager : MonoBehaviour
 {
     public TMP_Dropdown initialLanguageDropdown;
     public TMP_Dropdown targetLanguageDropdown;
     public TMP_InputField inputField;
+    public TMP_Text output;
 
     private Dictionary<string, string> languageCodes;
-    private HashSet<string> disabledLanguages;
 
     private void Start()
     {
@@ -130,10 +127,6 @@ public class TranslateManager : MonoBehaviour
             {"Zulu", "zu"}
         };
 
-
-        // Initialize the set of disabled languages
-        disabledLanguages = new HashSet<string>();
-
         // Add listeners to the dropdowns' OnValueChanged events
         initialLanguageDropdown.onValueChanged.AddListener(OnInitialLanguageValueChanged);
         targetLanguageDropdown.onValueChanged.AddListener(OnTargetLanguageValueChanged);
@@ -188,18 +181,8 @@ public class TranslateManager : MonoBehaviour
         // Check if the selected language matches the option text
         if (selectedOption.text == language)
         {
-            // Reset the other dropdown's value to the default option
-            dropdown.value = 0;
-        }
-
-        // Find and remove the selected language option from the dropdown options
-        for (int i = dropdown.options.Count - 1; i >= 0; i--)
-        {
-            /*if (dropdown.options[i].text == language)
-            {
-                dropdown.options.RemoveAt(i);
-                break;
-            }*/
+            // Swap the selected options
+            SwapSelectedOptions();
         }
 
         // Refresh the dropdown to reflect the updated options
@@ -212,7 +195,6 @@ public class TranslateManager : MonoBehaviour
         int initialIndex = initialLanguageDropdown.value;
         if (initialIndex == 0)
             return;
-
         int targetIndex = targetLanguageDropdown.value;
 
         // Swap the selected options between the dropdowns
@@ -281,18 +263,28 @@ public class TranslateManager : MonoBehaviour
 
     public async void translateTextAsync()
     {
-        string detectedLanguageJson = await DetectLanguage(inputField.text);
-        Debug.Log(detectedLanguageJson);
+        string text = inputField.text;
+        if (string.IsNullOrWhiteSpace(text))
+            return;
+        string sourceLanguage = "";
+        string targetLanguage = languageCodes[targetLanguageDropdown.name];
 
-        // Parse the JSON response
-        JObject jsonResponse = JObject.Parse(detectedLanguageJson);
+        int initialIndex = initialLanguageDropdown.value;
+        if (initialIndex == 0)
+        {
+            string detectedLanguageJson = await DetectLanguage(inputField.text);
+            Debug.Log(detectedLanguageJson);
 
-        // Access the language value
-        string detectedLanguage = jsonResponse["data"]["detections"][0][0]["language"].ToString();
+            // Parse the JSON response
+            JObject jsonResponse = JObject.Parse(detectedLanguageJson);
 
-        // Do something with the detected language result
-        Debug.Log(detectedLanguage);
+            // Access the language value
+            sourceLanguage = jsonResponse["data"]["detections"][0][0]["language"].ToString();
+        } 
+        else
+        {
+            sourceLanguage = languageCodes[initialLanguageDropdown.name];
+        }
+        output.text = await TranslateText(text, targetLanguage, sourceLanguage);
     }
-
-
 }
