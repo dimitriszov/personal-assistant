@@ -70,7 +70,7 @@ public class ContactManager : MonoBehaviour
             contacts.Add(newContact);
             SaveContacts();
             // Refresh the contact search list
-            DisplaySearchResults("");
+            //DisplaySearchResults("");
         }
         /* string contactInfo = contactInputField.text;
          string contactInfoN = contactInputFieldNumber.text;
@@ -120,7 +120,7 @@ public class ContactManager : MonoBehaviour
 
     public void DeleteContact()
     {
-        string name = contactInputField.text;
+        string name = contactInputField.text.Trim();
         string phoneNumber = contactInputFieldNumber.text;
         Contact contactToDelete = FindContact(name, phoneNumber);
         if (contactToDelete != null)
@@ -129,7 +129,7 @@ public class ContactManager : MonoBehaviour
             // Save or update the contacts in the storage mechanism
             SaveContacts();
             // Refresh the contact search list
-            DisplaySearchResults("");
+           // DisplaySearchResults();
         }
         contactInputField.text = string.Empty;
         Debug.Log("Delete");
@@ -143,15 +143,18 @@ public class ContactManager : MonoBehaviour
 
             if (contact.Name.ToLower() == contactName.ToLower() || contact.PhoneNumber == contatcNumber)
             {
+                Debug.Log("Contact Found!!");
                 return contact;
             }
         }
+        Debug.Log("No contact!!!");
         return null; // Contact not found
     }
 
 
-    public void DisplaySearchResults(string name)
+    public void DisplaySearchResults()
     {
+        string name = searchByNameInputField.text;
 
         if (searchResultsText == null)
         {
@@ -172,14 +175,15 @@ public class ContactManager : MonoBehaviour
         }
 
         // Clear the search results UI
-        searchResultsText.text = string.Empty;
+       // searchResultsText.text = string.Empty;
         // Clear the search results UI
-        searchResultsText.text = string.Empty;
+      //  searchResultsText.text = string.Empty;
 
         // Display the search results
         foreach (Contact result in searchResults)
         {
             searchResultsText.text += result.Name + ": " + result.PhoneNumber + "\n";
+            Debug.Log("Contact: " + result.Name + ": " + result.PhoneNumber + "\n" );
         }
     }
 
