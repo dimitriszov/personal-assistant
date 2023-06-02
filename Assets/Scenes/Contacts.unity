@@ -1277,7 +1277,6 @@ GameObject:
   - component: {fileID: 489781033}
   - component: {fileID: 489781035}
   - component: {fileID: 489781034}
-  - component: {fileID: 489781036}
   m_Layer: 5
   m_Name: ListBackGround
   m_TagString: Untagged
@@ -1348,22 +1347,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489781032}
   m_CullTransparentMesh: 1
---- !u!114 &489781036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489781032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03fdbac2bf8d7149b7071f265f0f9e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contacts: []
-  contactInputField: {fileID: 1520387318}
-  contactInputFieldNumber: {fileID: 0}
-  searchResultsText: {fileID: 0}
 --- !u!1 &565537983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,7 +1358,6 @@ GameObject:
   - component: {fileID: 565537984}
   - component: {fileID: 565537986}
   - component: {fileID: 565537985}
-  - component: {fileID: 565537987}
   m_Layer: 5
   m_Name: 'DeleteBackGround '
   m_TagString: Untagged
@@ -1447,22 +1429,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565537983}
   m_CullTransparentMesh: 1
---- !u!114 &565537987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565537983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03fdbac2bf8d7149b7071f265f0f9e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contacts: []
-  contactInputField: {fileID: 1953392851}
-  contactInputFieldNumber: {fileID: 1808134667}
-  searchResultsText: {fileID: 0}
 --- !u!1 &591593754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,9 +1699,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contacts: []
+  searchByNameInputField: {fileID: 0}
+  searchByNumberInputField: {fileID: 0}
+  searchResultsText: {fileID: 0}
+  addNameInputField: {fileID: 0}
+  addNumberInputField: {fileID: 0}
   contactInputField: {fileID: 1520387318}
   contactInputFieldNumber: {fileID: 226067703}
-  searchResultsText: {fileID: 0}
 --- !u!4 &699664841
 Transform:
   m_ObjectHideFlags: 0
@@ -1765,6 +1735,7 @@ GameObject:
   - component: {fileID: 741109444}
   - component: {fileID: 741109448}
   - component: {fileID: 741109449}
+  - component: {fileID: 741109450}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1895,6 +1866,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &741109450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741109443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03fdbac2bf8d7149b7071f265f0f9e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contacts: []
+  searchByNameInputField: {fileID: 1520387318}
+  searchByNumberInputField: {fileID: 0}
+  searchResultsText: {fileID: 121887842}
+  addNameInputField: {fileID: 1662536833}
+  addNumberInputField: {fileID: 226067703}
+  contactInputField: {fileID: 1953392851}
+  contactInputFieldNumber: {fileID: 1808134667}
 --- !u!1 &934448680
 GameObject:
   m_ObjectHideFlags: 0
@@ -4927,7 +4918,6 @@ GameObject:
   - component: {fileID: 2071393218}
   - component: {fileID: 2071393220}
   - component: {fileID: 2071393219}
-  - component: {fileID: 2071393221}
   m_Layer: 5
   m_Name: 'AddBackGround '
   m_TagString: Untagged
@@ -4998,22 +4988,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071393217}
   m_CullTransparentMesh: 1
---- !u!114 &2071393221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071393217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03fdbac2bf8d7149b7071f265f0f9e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contacts: []
-  contactInputField: {fileID: 1662536833}
-  contactInputFieldNumber: {fileID: 226067703}
-  searchResultsText: {fileID: 0}
 --- !u!1001 &2132583121
 PrefabInstance:
   m_ObjectHideFlags: 0

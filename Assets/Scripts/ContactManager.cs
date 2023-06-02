@@ -8,11 +8,20 @@ public class ContactManager : MonoBehaviour
 {
 
     [SerializeField] public List<Contact> contacts;
+    [SerializeField]
+    public InputField searchByNameInputField;
+    [SerializeField]
+    public InputField searchByNumberInputField;
+    [SerializeField] 
+    public Text searchResultsText;
+    [SerializeField]
+    public InputField addNameInputField;
+    [SerializeField]
+    public InputField addNumberInputField;
     [SerializeField] public InputField contactInputField;
     [SerializeField] public InputField contactInputFieldNumber;
-    [SerializeField] public Text searchResultsText;
 
-    [System.Serializable]
+    [Serializable]
     public class Contact
     {
         public string Name;
@@ -47,14 +56,14 @@ public class ContactManager : MonoBehaviour
 
     public void AddContact()
     {
-        if (contactInputField == null || contactInputFieldNumber == null)
+        if (addNameInputField == null || addNumberInputField == null)
         {
             Debug.LogError("InputField references are not assigned.");
             return;
         }
       
-        string name = contactInputField.text;
-        string phoneNumber = contactInputFieldNumber.text;
+        string name = addNameInputField.text;
+        string phoneNumber = addNumberInputField.text;
         Contact newContact = new Contact(name, phoneNumber);
         if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(phoneNumber))
         {
@@ -76,8 +85,8 @@ public class ContactManager : MonoBehaviour
             DisplaySearchResults("");
         }
       */
-        contactInputField.text = string.Empty; // Clear the input field
-        contactInputFieldNumber.text = string.Empty; // Clear the input field
+        addNameInputField.text = string.Empty; // Clear the input field
+        addNumberInputField.text = string.Empty; // Clear the input field
     }
 
     public Contact ParseContactInfo(string contactInfo)
@@ -111,8 +120,9 @@ public class ContactManager : MonoBehaviour
 
     public void DeleteContact()
     {
-        string contactInfo = contactInputField.text;
-        Contact contactToDelete = FindContact(contactInfo);
+        string name = contactInputField.text;
+        string phoneNumber = contactInputFieldNumber.text;
+        Contact contactToDelete = FindContact(name, phoneNumber);
         if (contactToDelete != null)
         {
             contacts.Remove(contactToDelete);
@@ -125,13 +135,13 @@ public class ContactManager : MonoBehaviour
         Debug.Log("Delete");
     }
 
-    public Contact FindContact(string contactInfo)
+    public Contact FindContact(string contactName, string contatcNumber)
     {
         foreach (Contact contact in contacts)
         {
             // if (contact.Name.ToLower() == contactInfo.ToLower()  ||ontact.PhoneNumber == contactInfo)
 
-            if (contact.Name.ToLower() == contactInfo.ToLower() || contact.PhoneNumber == contactInfo)
+            if (contact.Name.ToLower() == contactName.ToLower() || contact.PhoneNumber == contatcNumber)
             {
                 return contact;
             }
