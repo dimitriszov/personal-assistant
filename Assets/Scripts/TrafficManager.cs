@@ -10,6 +10,9 @@ public class TrafficManager : MonoBehaviour
 {
     [SerializeField]
     public TextMeshProUGUI textTraffic;
+    public TMP_Text RadiusText;
+    public bool DisplayExtended = false;
+    private float radius = 10.0f;
     public enum EPhase
     {
         NotStarted,
@@ -166,7 +169,7 @@ public class TrafficManager : MonoBehaviour
     {
         Phase = EPhase.GetTrafficData;
         // attempt to retrieve the geographic data
-        string mapArea = GetBoundingBox(GeographicData.Latitude, GeographicData.Longitude);
+        string mapArea = GetBoundingBox(GeographicData.Latitude, GeographicData.Longitude, Convert.ToDouble(radius));
         // Debug.Log(URL_GetTrafficData + mapArea + "?key=" + ApiKey);
         using (UnityWebRequest request = UnityWebRequest.Get(URL_GetTrafficData + mapArea + "?key=" + ApiKey))
         {
@@ -177,7 +180,15 @@ public class TrafficManager : MonoBehaviour
             {
                 trafficResult = JsonConvert.DeserializeObject<TrafficResult>(request.downloadHandler.text);
                 //Debug.Log(request.downloadHandler.text);
-                printTraffic();
+                if(DisplayExtended ==  false)
+                {
+                    printTraffic();
+                }
+                else
+                {
+                    printExtendedTraffic();
+                }
+                
             }
             else
             {
@@ -204,11 +215,46 @@ public class TrafficManager : MonoBehaviour
 
     public void printTraffic()
     {
-        string result = "<align=\"center\"><b>Traffic Info</b>\n<align=\"left\">";
+        string result = "<align=\"center\"><b><color=#FB8500>Traffic Info</color></b>\n<align=\"left\">";
         foreach(Resource res in trafficResult.ResourceSets[0].Resources)
         {
-            result += res.Description + "\n";
+            result += "<font-weight=\"900\">*</font-weight> <indent=5%>" + res.Description + "</indent>\n";
         }
         textTraffic.text = result;
+    }
+
+    public void printExtendedTraffic()
+    {
+        string result = "<align=\"center\"><b><color=#FB8500>Traffic Info</color></b>\n<align=\"left\">";
+        foreach (Resource res in trafficResult.ResourceSets[0].Resources)
+        {
+            result += "<font-weight=\"900\">*</font-weight> <indent=5%>" + res.Description + "</indent>\n";
+            Debug.Log(res.Detour);
+            if(!string.IsNullOrEmpty(res.Detour))
+                result += "<color=#FFB703><font-weight=\"800\">></font-weight> <indent=8%>" + res.Detour + "</indent></color>\n";
+        }
+        textTraffic.text = result;
+    }
+
+    public void setRadius(float radius)
+    {
+        this.radius = radius;
+    }
+
+    public void setTextRadius(float radius)
+    {
+        if (RadiusText == null)
+            return;
+        RadiusText.text = radius.ToString();
+    }
+
+    public void setFlag(bool flag)
+    {
+        DisplayExtended = flag;
+    }
+
+    public void startNewSearch()
+    {
+        StartCoroutine(GetWeather_Phase1_PublicIP());
     }
 }

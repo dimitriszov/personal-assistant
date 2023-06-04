@@ -1673,6 +1673,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: title
+      value: Search
+      objectReference: {fileID: 0}
     - target: {fileID: 7068121130134375372, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_Name
       value: SettingsObject

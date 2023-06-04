@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class SettingsMenu : MonoBehaviour
     public Dropdown resDropdown;
     public AudioMixer mixer;
     public GameObject button;
-    public Text titleText;
+    public TMP_Text titleText;
     public string title;
     //public static SettingsMenu instance;
 

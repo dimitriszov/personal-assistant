@@ -5461,6 +5461,7 @@ RectTransform:
   - {fileID: 419976714}
   - {fileID: 1783148751}
   - {fileID: 812798503}
+  - {fileID: 2086903457}
   m_Father: {fileID: 1415759069}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5799,7 +5800,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1333278516}
-  - {fileID: 2086903457}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6448,103 +6448,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'By Daniele Palumbo & Erwan Rivault
-
-    BBC Verify
-
-    A beach resort
-    bristling with fortifications. A major road lined with anti-tank ditches. Satellite
-    analysis by BBC Verify has uncovered some of the extensive defences built by
-    Russia as it prepares for a major Ukrainian counter-attack.
-
-
-
-    After months
-    of stalemate, the expected assault is likely to be a crucial test for Ukraine
-    as it seeks to prove it can achieve significant battlefield gains with the weapons
-    it has received from the West.
-
-
-
-    By examining hundreds of satellite images,
-    the BBC has identified some key points in the significant build-up of trenches
-    and other fortifications in southern Ukraine since October.
-
-
-
-    These four
-    locations offer an insight into what Russia expects from the counter-offensive,
-    and what defences Ukrainian forces might encounter.
-
-
-
-    1. Crimea''s west
-    coast
-
-    Seized by Russia in 2014, Crimea was formerly known for its beach
-    resorts.
-
-
-
-    Now, instead of sun loungers and parasols, the coastline stretching
-    for 15 miles (25km) is littered with defence structures installed by Russian
-    troops.
-
-
-
-    The image below shows the only open sandy beach on the west coast
-    without natural defences such as cliffs or hills.
-
-
-
-    Satellite image with
-    overlays showing a network of treches, "dragon''s teeth" defences and a bunker
-
-    Firstly,
-    there are "dragon''s teeth" along the shore: pyramid-shaped blocks of concrete,
-    designed to block the path of tanks and other military vehicles.
-
-
-
-    Behind
-    them is a line of trenches, providing cover from incoming attacks. Several bunkers
-    can also be spotted along the trenches.
-
-
-
-    Stacks of wood, digging machines
-    and stores of dragon''s teeth along the coast suggest building work was still
-    in progress when the image was taken in March.
-
-
-
-    Bakhmut not occupied by
-    Russia, says defiant Zelensky
-
-    Ukraine not attacking Russian territory -
-    Zelensky
-
-    BBC News CEO Deborah Turness on the launch of BBC Verify
-
-    Some
-    military experts suggest the defences are likely to be a precaution, rather than
-    a sign that Russia expects to defend a seaborne assault, since Ukraine has little
-    naval capacity.
-
-
-
-    Intelligence analyst Layla Guest says: "The fortifications
-    are likely in place to deter any bold Ukrainian operation to attack Crimea via
-    the sea rather than on land."
-
-
-
-    The beach fortification is just one example
-    of a vast network of trenches, as shown by the black dots in the map below, based
-    on work by open-source analyst Brady Africk.'
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: abc1048d294f3ae4eb1f1bf7093e7de1, type: 2}
-  m_sharedMaterial: {fileID: -6564069152529238977, guid: abc1048d294f3ae4eb1f1bf7093e7de1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 70e33faf4689c004cb81c471a0487af4, type: 2}
+  m_sharedMaterial: {fileID: -7406087259419306111, guid: 70e33faf4689c004cb81c471a0487af4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6912,20 +6819,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086903456}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1057516619}
   - {fileID: 2142463635}
-  m_Father: {fileID: 1415759069}
-  m_RootOrder: 1
+  m_Father: {fileID: 1333278516}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 944.57, y: -168}
-  m_SizeDelta: {x: 327.51, y: 677.169}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -168.49, y: -129.58997}
+  m_SizeDelta: {x: 336.97, y: 703.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086903458
 MonoBehaviour:
@@ -11899,8 +11806,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1378742708}
   m_HandleRect: {fileID: 1378742707}
   m_Direction: 2
-  m_Value: 0.50000006
-  m_Size: 0.2752742
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
