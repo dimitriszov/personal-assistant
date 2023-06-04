@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using TMPro;
-using System.Net.Mail;
 
 public class SearchManager : MonoBehaviour
 {

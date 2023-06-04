@@ -1,0 +1,62 @@
+[
+  {
+    "Name": "Apple iphone 11",
+    "Price": 500.0
+  },
+  {
+    "Name": "Apple iphone 13 mini",
+    "Price": 700.0
+  },
+  {
+    "Name": "Huawei Nova 5",
+    "Price": 422.2
+  },
+  {
+    "Name": "Huawei Nova Y90",
+    "Price": 350.0
+  },
+  {
+    "Name": "Iphone 12 Pro Max",
+    "Price": 800.0
+  },
+  {
+    "Name": "Iphone 14 Pro",
+    "Price": 1000.0
+  },
+  {
+    "Name": "Iphone 15 Pro",
+    "Price": 1500.0
+  },
+  {
+    "Name": "Lenovo P2",
+    "Price": 250.0
+  },
+  {
+    "Name": "Razer Phone",
+    "Price": 500.0
+  },
+  {
+    "Name": "Samsung Galaxy A12",
+    "Price": 650.0
+  },
+  {
+    "Name": "Samsung Galaxy S21",
+    "Price": 900.0
+  },
+  {
+    "Name": "Huawei P30 lite",
+    "Price": 460.0
+  },
+  {
+    "Name": "Xiaomi Mi 9 Pro",
+    "Price": 700.0
+  },
+  {
+    "Name": "Xiaomi Mi 10 Pro",
+    "Price": 500.0
+  },
+  {
+    "Name": "Xiaomi Redmi 11 Pro",
+    "Price": 650.0
+  }
+]

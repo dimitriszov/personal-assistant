@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
 using UnityEngine.UI;
-using System.Net.Http;
 using System.IO;
-using System;
 
 public class GetWeatherInfo : MonoBehaviour
 {
@@ -221,7 +219,7 @@ public class GetWeatherInfo : MonoBehaviour
                     changeSkyBox(1);
                     break;
             }
-            Texture2D tex = new Texture2D(2, 2); // Create an empty Texture; size doesn't matter (she said)
+            Texture2D tex = new Texture2D(2, 2); // Create an empty Texture; size doesn't matter
             tex.LoadImage(rawData);
             image.texture = tex;
         }
