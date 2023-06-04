@@ -25,6 +25,8 @@ public class SearchManager : MonoBehaviour
     public class Result
     {
         public string Link { get; set; }
+        public string Snippet { get; set; }
+        public string Title { get; set; }
     }
 
     // Start is called before the first frame update
@@ -71,12 +73,15 @@ public class SearchManager : MonoBehaviour
                 // Print the URLs of the first 20 sites
                 foreach (Result result in first20Results)
                 {
-                    Debug.Log(result.Link);
-                    addResult(result.Link);
+                    //Debug.Log("Title: " + result.Title);
+                    //Debug.Log("Description: " + result.Snippet);
+                    //Debug.Log("URL: " + result.Link);
+                    //Debug.Log("-----------------------------");
+                    addResult(result.Title, result.Snippet, result.Link);
                 }
 
-                // For simplicity, we'll just print the response content
-                Debug.Log(responseContent);
+                // For Debug, we'll just print the response content
+                // Debug.Log(responseContent);
             }
             else
             {
@@ -86,12 +91,14 @@ public class SearchManager : MonoBehaviour
         yield return null;
     }
 
-    public void addResult(string link)
+    public void addResult(string title, string descr, string link)
     {
         GameObject result = Instantiate(prefab, container);
         if (result.TryGetComponent<SearchResult>(out SearchResult item))
         {
-            item.changeText(link);
+            item.setTitleText(title);
+            item.setDescriptionText(descr);
+            item.setLinkText(link);
         }
     }
 }

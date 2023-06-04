@@ -1,9 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class SearchResult : MonoBehaviour
 {
-    public Text text;
+    public TMP_Text TitleText, LinkText, DescriptionText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,16 +17,32 @@ public class SearchResult : MonoBehaviour
         
     }
 
-    public void changeText(string newText)
+    public void setTitleText(string newText)
     {
         if (newText != null)
         {
-            text.text = newText;
+            TitleText.text = newText;
+        }
+    }
+
+    public void setLinkText(string newText) 
+    {
+        if (newText != null)
+        {
+            LinkText.text = newText;
+        }
+    }
+
+    public void setDescriptionText(string newText) 
+    {  
+        if (newText != null)
+        { 
+            DescriptionText.text = newText; 
         }
     }
 
     public void openLink()
     {
-        Application.OpenURL(text.text);
+        Application.OpenURL(LinkText.text);
     }
 }
