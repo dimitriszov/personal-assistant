@@ -50,7 +50,7 @@ public class SearchManager : MonoBehaviour
     {
         // Build the API request URL
         string apiUrl = $"https://www.googleapis.com/customsearch/v1?key={APIkey}&cx={searchEngineId}&q={query}";
-        Debug.Log(apiUrl);
+        //Debug.Log(apiUrl);
         using (UnityWebRequest request = UnityWebRequest.Get(apiUrl))
         {
             request.timeout = 20;
