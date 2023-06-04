@@ -42,7 +42,7 @@ public class EshopItem : MonoBehaviour
 
     public void setPrice(string price)
     {
-        priceText.text = price;
+        priceText.text = price + " €";
     }
     public void setImage(string pathFile)
     {

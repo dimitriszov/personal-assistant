@@ -1357,7 +1357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 1262961618}
-  prefab: {fileID: 2284274091814122931, guid: 3901e241ef1c46342bf41a563931c80d, type: 3}
+  prefab: {fileID: 8164084239286802629, guid: facc09d9365d82f41b0aa435da637fc2, type: 3}
   cartContainer: {fileID: 1948861517}
   cartPrefab: {fileID: 4262329171744051856, guid: b562f011c9b8f1b499ed4912eae6e4d9, type: 3}
   cartItems: []
@@ -1573,8 +1573,8 @@ MonoBehaviour:
   m_StartAxis: 0
   m_CellSize: {x: 500, y: 400}
   m_Spacing: {x: 25, y: 20}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_Constraint: 1
+  m_ConstraintCount: 4
 --- !u!114 &1262961620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,7 +1626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.92}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -0.00010681}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321638670
@@ -1910,6 +1910,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 334982068706048817, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: title
       value: E-Shop
@@ -1996,6 +2000,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3912963876301809393, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261232144761653845, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7068121130134375372, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
