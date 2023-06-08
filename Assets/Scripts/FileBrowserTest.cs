@@ -13,11 +13,15 @@ using System;
 
 public class FileBrowserTest : MonoBehaviour
 {
-
+    public VisualElement mainPanel;
+    public VisualElement loginPanel;
     public Button emailButton;
     public Button addFile;
+    public Button loginButton;
     public ScrollView files;
     public TextField emailField;
+    public TextField passwordField;
+    public TextField toEmailField;
     public TextField subjectText;
     public TextField text;
     //[SerializeField] public LeanPulse notification;
@@ -49,14 +53,26 @@ public class FileBrowserTest : MonoBehaviour
     void Start()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
+        mainPanel = root.Q<VisualElement>("MainPanel");
+        loginPanel = root.Q<VisualElement>("LoginPanel");
+
         emailButton = root.Q<Button>("sendButton");
         addFile = root.Q<Button>("filesButton");
+        loginButton = root.Q<Button>("login");
         files = root.Q<ScrollView>("filesList");
-        emailField = root.Q<TextField>("EmailInput");
+        toEmailField = root.Q<TextField>("EmailInput");
         subjectText = root.Q<TextField>("SubjectInput");
         text = root.Q<TextField>("TextInput");
+        passwordField = root.Q<TextField>("Pas");
 
-        emailField.RegisterValueChangedCallback((evt) =>
+        passwordField.RegisterValueChangedCallback((evt) =>
+        {
+            passwordField.isPasswordField = true;
+            // Use the text as needed, e.g., store it in a variable, process it, etc.
+            Debug.Log("Text entered: " + evt.newValue);
+        });
+
+        toEmailField.RegisterValueChangedCallback((evt) =>
         {
             SaveToEmail(evt.newValue);
             // Use the text as needed, e.g., store it in a variable, process it, etc.
@@ -71,76 +87,11 @@ public class FileBrowserTest : MonoBehaviour
             SaveBody(evt.newValue);
         });
 
-        addFile.clicked += () => {
-            // Show a select folder dialog
-            // onSuccess event: print the selected folder's path
-            // onCancel event: print "Canceled"
-            // Load file/folder: folder, Allow multiple selection: false
-            // Initial path: default (Documents), Initial filename: empty
-            // Title: "Select Folder", Submit button text: "Select"
-            FileBrowser.ShowLoadDialog((paths) => {
-                addAttachments(paths);
-            },
-                                       () => { },
-                                       FileBrowser.PickMode.Files, true, null, null, "Select Files", "Select");
-        };
+        addFile.clicked += showDialog;
 
-        emailButton.clicked += () => {
-            // string fromEmail = PlayerPrefs.GetString("UserField");
-            // string password = PlayerPrefs.GetString("passwordField");
+        emailButton.clicked += SendEmail;
 
-            // Check if the recipient email is valid and not empty
-            if (String.IsNullOrEmpty(email.recipient))
-            {
-                // Show an error message popup if the email is not valid
-                Popup.Show("Error", "No recipient", "OK", PopupColor.Red);
-                return;
-            }
-
-            try
-            {
-                // Create a MailMessage object
-                MailMessage mail = new MailMessage();
-                mail.From = new MailAddress(email.username);
-                mail.To.Add(email.recipient);
-                mail.Subject = email.subject;
-                mail.Body = email.message;
-
-                // Add attachments to the email if there are any
-                if (email.attachments.Count >= 1)
-                {
-                    for (int i = 0; i < email.attachments.Count; i++)
-                    {
-                        mail.Attachments.Add(new System.Net.Mail.Attachment(email.attachments[i]));
-                    }
-                }
-
-                // Create a SmtpClient object and set the necessary properties
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                smtp.Port = 587;
-                smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential(email.username, email.password);
-                smtp.EnableSsl = true;
-
-                // Send the email
-                smtp.Send(mail);
-                //notification.Pulse();
-                for (int i = 0; i < attachments.Count; i++)
-                {
-                    if (attachments[i] != null)
-                        Destroy(attachments[i].gameObject);
-                }
-                attachments.RemoveAll(s => s == null);
-
-                // Show a success message popup if the email is sent successfully
-                // Popup.Show("Success", "Your email was sent succesfully", "OK", PopupColor.Green, () => SceneManager.LoadScene("EmailSceneV1"));
-            }
-            catch (Exception e)
-            {
-                // Show an error message popup if there is an exception
-                Popup.Show("Error", e.Message, "OK", PopupColor.Red);
-            }
-        };
+        loginButton.clicked += login;
 
         // Set filters (optional)
         // It is sufficient to set the filters just once (instead of each time before showing the file browser dialog), 
@@ -173,13 +124,12 @@ public class FileBrowserTest : MonoBehaviour
         // Load file/folder: folder, Allow multiple selection: false
         // Initial path: default (Documents), Initial filename: empty
         // Title: "Select Folder", Submit button text: "Select"
-        FileBrowser.ShowLoadDialog( ( paths ) => { addAttachments(paths);
-                                   },
+        FileBrowser.ShowLoadDialog( ( paths ) => { addAttachments(paths); },
         						   () => {  },
         						   FileBrowser.PickMode.Files, true, null, null, "Select Files", "Select" );
     }
 
-    public System.Action SendEmail()
+    public void SendEmail()
     {
         // string fromEmail = PlayerPrefs.GetString("UserField");
         // string password = PlayerPrefs.GetString("passwordField");
@@ -189,7 +139,7 @@ public class FileBrowserTest : MonoBehaviour
         {
             // Show an error message popup if the email is not valid
             Popup.Show("Error", "No recipient", "OK", PopupColor.Red);
-            return null;
+            return;
         }
 
         try
@@ -235,7 +185,7 @@ public class FileBrowserTest : MonoBehaviour
             // Show an error message popup if there is an exception
             Popup.Show("Error", e.Message, "OK", PopupColor.Red);
         }
-        return null;
+        return;
     }
 
     public void SaveToEmail(string input)
@@ -289,7 +239,7 @@ public class FileBrowserTest : MonoBehaviour
         var button = attachement.Q<Button>("atButton");
 
         // Modify the label text
-        label.text = input;
+        label.text = input.Replace("\\", "/");
 
         // Handle the button press to remove the GroupBox
         button.clicked += () =>
@@ -298,7 +248,15 @@ public class FileBrowserTest : MonoBehaviour
             removeAttachment(input);
         };
 
+        // Get the groupBoxContainer VisualElement from the ScrollView
+        VisualElement groupBoxContainer = files.contentContainer.Q<VisualElement>("unity-content-container");
         // Add the modified GroupBox to the groupBoxContainer
-        files.Add(attachement);
+        groupBoxContainer.Add(attachement);
+    }
+
+    public void login()
+    {
+        loginPanel.style.display = DisplayStyle.None;
+        mainPanel.style.display = DisplayStyle.Flex;
     }
 }
