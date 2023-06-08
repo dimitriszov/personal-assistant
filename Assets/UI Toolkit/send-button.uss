@@ -1,0 +1,32 @@
+.send-button {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(128, 161, 212);
+    -unity-font: url('project://database/Assets/Plugins/TextMesh%20Pro/Fonts/Ubuntu/Ubuntu-Regular.ttf?fileID=12800000&guid=95751beb2e9d83d43a172521fc635db0&type=3#Ubuntu-Regular');
+    font-size: 12px;
+    color: rgb(150, 125, 105);
+}
+
+.send-button:hover {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(89, 147, 238);
+    -unity-font: url('project://database/Assets/Plugins/TextMesh%20Pro/Fonts/Ubuntu/Ubuntu-Regular.ttf?fileID=12800000&guid=95751beb2e9d83d43a172521fc635db0&type=3#Ubuntu-Regular');
+    font-size: 12px;
+    color: rgb(150, 125, 105);
+}
+
+.send-button:active {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(60, 133, 248);
+    -unity-font: url('project://database/Assets/Plugins/TextMesh%20Pro/Fonts/Ubuntu/Ubuntu-Regular.ttf?fileID=12800000&guid=95751beb2e9d83d43a172521fc635db0&type=3#Ubuntu-Regular');
+    font-size: 12px;
+    color: rgb(241, 231, 224);
+}
