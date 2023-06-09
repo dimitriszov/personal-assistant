@@ -40,6 +40,7 @@ public class DialogManager : MonoBehaviour
 
     public void NextMessage()
     {
+        FindObjectOfType<AudioManager>().Play("Next");
         activeMessage++;
         if (activeMessage < currentMessages.Length) 
         {
@@ -76,8 +77,8 @@ public class DialogManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)  && isActive == true) 
-        { 
+        if(Input.GetKeyDown(KeyCode.Space) && isActive == true)
+        {
             NextMessage();
         }
     }

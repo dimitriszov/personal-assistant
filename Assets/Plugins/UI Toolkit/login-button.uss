@@ -1,0 +1,24 @@
+.login-button {
+    background-color: rgba(88, 102, 255, 255);
+    -unity-font: url('project://database/Assets/Plugins/TextMesh%20Pro/Fonts/Ubuntu/Ubuntu-Regular.ttf?fileID=12800000&guid=95751beb2e9d83d43a172521fc635db0&type=3#Ubuntu-Regular');
+    -unity-text-align: middle-center;
+    color: rgba(255, 255, 255, 255);
+}
+
+.login-button:hover {
+    background-color: rgb(55, 66, 190);
+    -unity-font: url('project://database/Assets/Plugins/TextMesh%20Pro/Fonts/Ubuntu/Ubuntu-Regular.ttf?fileID=12800000&guid=95751beb2e9d83d43a172521fc635db0&type=3#Ubuntu-Regular');
+    -unity-text-align: middle-center;
+    color: rgb(255, 255, 255);
+    scale: 1.1 1.1;
+}
+
+.login-button:active {
+    background-color: rgb(255, 255, 255);
+    -unity-font: url('project://database/Assets/Plugins/TextMesh%20Pro/Fonts/Ubuntu/Ubuntu-Regular.ttf?fileID=12800000&guid=95751beb2e9d83d43a172521fc635db0&type=3#Ubuntu-Regular');
+    -unity-text-align: middle-center;
+    color: rgb(55, 66, 190);
+    scale: 1 1;
+    translate: 0 0;
+    transform-origin: center;
+}

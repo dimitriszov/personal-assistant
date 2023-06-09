@@ -21,6 +21,7 @@ public class FileBrowserTest : MonoBehaviour
     public TextField toEmailField;
     public TextField subjectText;
     public TextField text;
+    public DialogTrigger[] dialogTriggers;
     //[SerializeField] public LeanPulse notification;
 
     public class Email
@@ -81,9 +82,17 @@ public class FileBrowserTest : MonoBehaviour
 
         addFile.clicked += showDialog;
 
+        emailButton.clicked += () => 
+                               {
+                                   FindObjectOfType<AudioManager>().Play("Click");
+                               };
         emailButton.clicked += SendEmail;
 
         loginButton.clicked += login;
+        loginButton.clicked += () =>
+        {
+            FindObjectOfType<AudioManager>().Play("Click");
+        };
 
         // Set filters (optional)
         // It is sufficient to set the filters just once (instead of each time before showing the file browser dialog), 
@@ -130,7 +139,7 @@ public class FileBrowserTest : MonoBehaviour
         if (String.IsNullOrEmpty(email.recipient))
         {
             // Show an error message popup if the email is not valid
-            Popup.Show("Error", "No recipient", "OK", PopupColor.Red);
+            dialogTriggers[1].OpenDialogue();
             return;
         }
 
@@ -162,15 +171,19 @@ public class FileBrowserTest : MonoBehaviour
             // Send the email
             smtp.Send(mail);
 
-            // clear the Input field
+            // clear the Input fields
             toEmailField.SetValueWithoutNotify("");
             subjectText.SetValueWithoutNotify("");
             text.SetValueWithoutNotify("");
+
+            email = new Email();
+
+            dialogTriggers[0].OpenDialogue();
         }
         catch (Exception e)
         {
             // Show an error message popup if there is an exception
-            Popup.Show("Error", e.Message, "OK", PopupColor.Red);
+            dialogTriggers[1].OpenDialogue("<b><color=#A8DADC>Error</color></b>\n" + e.Message);
         }
         return;
     }

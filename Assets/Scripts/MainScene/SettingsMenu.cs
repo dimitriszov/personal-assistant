@@ -11,10 +11,14 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
     public Dropdown resDropdown;
     public AudioMixer mixer;
+    public Slider musicSlider;
+    public Slider sfxSlider;
     public GameObject button;
     public TMP_Text titleText;
     public string title;
-    //public static SettingsMenu instance;
+
+    public const string MIXER_MUSIC = "MusicVolume";
+    public const string MIXER_SFX = "SFXVolume";
 
     private void Awake()
     {
@@ -28,15 +32,8 @@ public class SettingsMenu : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == 0)
             button.SetActive(false);
-        
-        /*if (instance == null)
-            instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);*/
+        musicSlider.onValueChanged.AddListener(SetMusicVolume);
+        sfxSlider.onValueChanged.AddListener(SetSFXVolume);
     }
 
     // Start is called before the first frame update
@@ -59,6 +56,16 @@ public class SettingsMenu : MonoBehaviour
         resDropdown.AddOptions(options);
         resDropdown.value = currentResIndex;
         resDropdown.RefreshShownValue();
+
+        // Set volume sliders
+        musicSlider.value = PlayerPrefs.GetFloat(AudioManager.MUSIC_KEY, 1f);
+        sfxSlider.value = PlayerPrefs.GetFloat(AudioManager.SFX_KEY, 1f);
+    }
+
+    private void OnDisable()
+    {
+        PlayerPrefs.SetFloat(AudioManager.MUSIC_KEY, musicSlider.value);
+        PlayerPrefs.SetFloat(AudioManager.SFX_KEY, sfxSlider.value);
     }
 
     private static Resolution GetCurrentResolution()
@@ -71,10 +78,20 @@ public class SettingsMenu : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
-    // Start is called before the first frame update
-    public void SetVolume(float volume)
+
+    public void SetMasterVolume(float volume)
     {
-        mixer.SetFloat("Volume", volume);
+        mixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        mixer.SetFloat(MIXER_MUSIC, Mathf.Log10(volume) * 20);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        mixer.SetFloat(MIXER_SFX, Mathf.Log10(volume) * 20);
     }
 
     public void SetQuality(int qualityIndex)
