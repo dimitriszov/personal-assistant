@@ -1,9 +1,6 @@
 using UnityEngine;
-using System.Collections;
-using System.IO;
 using SimpleFileBrowser;
 using UnityEngine.UIElements;
-using Lean.Gui;
 using System.Collections.Generic;
 using UnityEditor;
 using EasyUI.Popup;
@@ -38,7 +35,6 @@ public class FileBrowserTest : MonoBehaviour
 
     // The current email instance
     Email email = new Email();
-    private List<AttachmentClass> attachments = new List<AttachmentClass>();
 
     //Singleton pattern
     public static FileBrowserTest Instance;
@@ -68,15 +64,11 @@ public class FileBrowserTest : MonoBehaviour
         passwordField.RegisterValueChangedCallback((evt) =>
         {
             passwordField.isPasswordField = true;
-            // Use the text as needed, e.g., store it in a variable, process it, etc.
-            Debug.Log("Text entered: " + evt.newValue);
         });
 
         toEmailField.RegisterValueChangedCallback((evt) =>
         {
             SaveToEmail(evt.newValue);
-            // Use the text as needed, e.g., store it in a variable, process it, etc.
-            Debug.Log("Text entered: " + evt.newValue);
         });
 
         subjectText.RegisterValueChangedCallback((evt) => {
@@ -156,7 +148,7 @@ public class FileBrowserTest : MonoBehaviour
             {
                 for (int i = 0; i < email.attachments.Count; i++)
                 {
-                    mail.Attachments.Add(new System.Net.Mail.Attachment(email.attachments[i]));
+                    mail.Attachments.Add(new Attachment(email.attachments[i]));
                 }
             }
 
@@ -169,16 +161,11 @@ public class FileBrowserTest : MonoBehaviour
 
             // Send the email
             smtp.Send(mail);
-            //notification.Pulse();
-            for (int i = 0; i < attachments.Count; i++)
-            {
-                if (attachments[i] != null)
-                    Destroy(attachments[i].gameObject);
-            }
-            attachments.RemoveAll(s => s == null);
 
-            // Show a success message popup if the email is sent successfully
-            // Popup.Show("Success", "Your email was sent succesfully", "OK", PopupColor.Green, () => SceneManager.LoadScene("EmailSceneV1"));
+            // clear the Input field
+            toEmailField.SetValueWithoutNotify("");
+            subjectText.SetValueWithoutNotify("");
+            text.SetValueWithoutNotify("");
         }
         catch (Exception e)
         {

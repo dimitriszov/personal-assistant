@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/EmailScene.unity
-    guid: c290f3aaf9ee1bc449229f453b74bfc2
+    path: Assets/Scenes/Mail.unity
+    guid: 33bc1271ed606964e903e5a355572c35
   - enabled: 1
     path: Assets/Scenes/NavigationScene.unity
     guid: 6c7408825b9c95446ac3fc53a8e0ab31
