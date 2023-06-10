@@ -192,8 +192,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46016744}
-  m_LocalRotation: {x: 0.122173116, y: -0.012795441, z: 0.0015751908, w: 0.9924251}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0000009536743}
+  m_LocalRotation: {x: 0.12217311, y: -0.012795446, z: 0.0015751916, w: 0.9924251}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -410,6 +410,76 @@ Transform:
   - {fileID: 1183249616}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &394518133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394518136}
+  - component: {fileID: 394518135}
+  - component: {fileID: 394518134}
+  m_Layer: 0
+  m_Name: MainScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &394518134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394518133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892c6d0bf16f05743b80f2cb9d9c75b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogTrigger: {fileID: 394518135}
+--- !u!114 &394518135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394518133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b87caf310aae474aa54135937c9706b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages:
+  - acrorId: 0
+    message: 'Hello there!
+
+      My name is Jammo and i am your personal assistant.'
+  - acrorId: 0
+    message: I will be here to guide you and help you get familiar with the application.
+  - acrorId: 0
+    message: Lets get started.
+  actors:
+  - name: Jammo
+    sprite: {fileID: 21300000, guid: 2bcd89a791bdcf342b9b3eb2e71a0279, type: 3}
+--- !u!4 &394518136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394518133}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &413320189
 GameObject:
@@ -2517,7 +2587,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelLoader: {fileID: 438362169}
-  dialogTrigger: {fileID: 1289307411}
 --- !u!114 &1289307411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2650,6 +2719,16 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Contacts
       m_Image: {fileID: 0}
+    - m_Text: Eshop
+      m_Image: {fileID: 0}
+    - m_Text: Jobs
+      m_Image: {fileID: 0}
+    - m_Text: Music
+      m_Image: {fileID: 0}
+    - m_Text: Traffic
+      m_Image: {fileID: 0}
+    - m_Text: Translate
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2773,7 +2852,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551315835}
-  m_LocalRotation: {x: 0.064957686, y: -0.012864825, z: 0.00083750783, w: 0.99780476}
+  m_LocalRotation: {x: 0.064957686, y: -0.012864791, z: 0.0008375055, w: 0.99780476}
   m_LocalPosition: {x: 0, y: 0, z: -0.0000009536743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2851,8 +2930,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584003992}
-  m_LocalRotation: {x: 0.093509205, y: -0.012835538, z: 0.0012056243, w: 0.99553496}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.093509205, y: -0.012835538, z: 0.0012056241, w: 0.99553496}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0000009536743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

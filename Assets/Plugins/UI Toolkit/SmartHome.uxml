@@ -1,0 +1,100 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="background-color: rgb(229, 229, 229); top: 5%; height: 95%;">
+        <ui:GroupBox style="height: 10%; align-items: center; justify-content: space-around; flex-direction: row; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-left-color: rgb(82, 82, 82); border-right-color: rgb(82, 82, 82); border-top-color: rgb(82, 82, 82); border-bottom-color: rgb(82, 82, 82);">
+            <ui:Button text="Lights" display-tooltip-when-elided="true" />
+            <ui:Button text="Heating" display-tooltip-when-elided="true" />
+            <ui:Button text="AC" display-tooltip-when-elided="true" />
+            <ui:Button text="Cameras" display-tooltip-when-elided="true" />
+            <ui:Button text="Add Device" display-tooltip-when-elided="true" />
+        </ui:GroupBox>
+        <ui:VisualElement style="flex-grow: 1; justify-content: center;">
+            <ui:ScrollView name="LightsScrollview" style="flex-grow: 1; display: flex; flex-direction: column;">
+                <ui:VisualElement name="Light" style="flex-direction: row; justify-content: space-around; background-color: rgb(202, 202, 202); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(130, 130, 130); border-right-color: rgb(130, 130, 130); border-top-color: rgb(130, 130, 130); border-bottom-color: rgb(130, 130, 130); margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px;">
+                    <ui:Label text="Light1" display-tooltip-when-elided="true" name="Light1" style="width: 72px; -unity-text-align: middle-center;" />
+                    <ui:SliderInt picking-mode="Ignore" label="Light percentage" value="42" high-value="100" direction="Horizontal" show-input-field="false" inverted="false" style="width: 385px;" />
+                    <ui:Label text="Room:" display-tooltip-when-elided="true" />
+                    <ui:Label text="Kitchen" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Light" style="flex-direction: row; justify-content: space-around; background-color: rgb(202, 202, 202); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(130, 130, 130); border-right-color: rgb(130, 130, 130); border-top-color: rgb(130, 130, 130); border-bottom-color: rgb(130, 130, 130); margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px;">
+                    <ui:Label text="Light1" display-tooltip-when-elided="true" name="Light1" style="width: 72px; -unity-text-align: middle-center;" />
+                    <ui:SliderInt picking-mode="Ignore" label="Light percentage" value="42" high-value="100" direction="Horizontal" show-input-field="false" inverted="false" style="width: 385px;" />
+                    <ui:Label text="Room:" display-tooltip-when-elided="true" />
+                    <ui:Label text="Kitchen" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Light" style="flex-direction: row; justify-content: space-around; background-color: rgb(202, 202, 202); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(130, 130, 130); border-right-color: rgb(130, 130, 130); border-top-color: rgb(130, 130, 130); border-bottom-color: rgb(130, 130, 130); margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px;">
+                    <ui:Label text="Light1" display-tooltip-when-elided="true" name="Light1" style="width: 72px; -unity-text-align: middle-center;" />
+                    <ui:SliderInt picking-mode="Ignore" label="Light percentage" value="42" high-value="100" direction="Horizontal" show-input-field="false" inverted="false" style="width: 385px;" />
+                    <ui:Label text="Room:" display-tooltip-when-elided="true" />
+                    <ui:Label text="Kitchen" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Light" style="flex-direction: row; justify-content: space-around; background-color: rgb(202, 202, 202); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(130, 130, 130); border-right-color: rgb(130, 130, 130); border-top-color: rgb(130, 130, 130); border-bottom-color: rgb(130, 130, 130); margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px;">
+                    <ui:Label text="Light1" display-tooltip-when-elided="true" name="Light1" style="width: 72px; -unity-text-align: middle-center;" />
+                    <ui:SliderInt picking-mode="Ignore" label="Light percentage" value="42" high-value="100" direction="Horizontal" show-input-field="false" inverted="false" style="width: 385px;" />
+                    <ui:Label text="Room:" display-tooltip-when-elided="true" />
+                    <ui:Label text="Kitchen" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Light" style="flex-direction: row; justify-content: space-around; background-color: rgb(202, 202, 202); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(130, 130, 130); border-right-color: rgb(130, 130, 130); border-top-color: rgb(130, 130, 130); border-bottom-color: rgb(130, 130, 130); margin-left: 2px; margin-right: 2px; margin-top: 2px; margin-bottom: 2px;">
+                    <ui:Label text="Light1" display-tooltip-when-elided="true" name="Light1" style="width: 72px; -unity-text-align: middle-center;" />
+                    <ui:SliderInt picking-mode="Ignore" label="Light percentage" value="42" high-value="100" direction="Horizontal" show-input-field="false" inverted="false" style="width: 385px;" />
+                    <ui:Label text="Room:" display-tooltip-when-elided="true" />
+                    <ui:Label text="Kitchen" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+            </ui:ScrollView>
+            <ui:ScrollView name="HeatingScrollview" style="flex-grow: 1; display: none;">
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Label text="Name:" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="Heat kitchen" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:Slider picking-mode="Ignore" label="Heat" value="42" high-value="100" show-input-field="false" style="width: 346px;" />
+                    <ui:Label text="Room:" display-tooltip-when-elided="true" />
+                    <ui:Label text="Kitchen" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+            </ui:ScrollView>
+            <ui:ScrollView name="ACScrollview" style="flex-grow: 1; display: none;">
+                <ui:VisualElement style="flex-direction: row; justify-content: space-around;">
+                    <ui:Label text="Name:" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="AC kitchen" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:TextField picking-mode="Ignore" label="Temp:" value="filler text" text="20" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="Room:" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="Kitchen" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-direction: row; justify-content: space-around;">
+                    <ui:Label text="Name:" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="AC living room" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:TextField picking-mode="Ignore" label="Temp:" value="filler text" text="21" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="Room:" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="Living Room" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-direction: row; justify-content: space-around;">
+                    <ui:Label text="Name:" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="AC bedroom" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:TextField picking-mode="Ignore" label="Temp:" value="filler text" text="18" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="Room:" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="Bedroom" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                </ui:VisualElement>
+            </ui:ScrollView>
+            <ui:ScrollView name="CamerasScrollView" style="flex-grow: 1; display: none;">
+                <ui:VisualElement style="flex-direction: row; justify-content: space-around; align-items: stretch;">
+                    <ui:Label text="Name:" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="Front Camera" display-tooltip-when-elided="true" style="-unity-text-align: middle-left;" />
+                    <ui:Toggle label="On" />
+                    <ui:Label text="Room:" display-tooltip-when-elided="true" style="-unity-text-align: middle-center;" />
+                    <ui:Label text="Outside" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="AddDevicePanel" style="position: absolute; height: 237px; top: 94px; left: 337px; background-color: rgb(72, 72, 72); width: 796px; visibility: visible; display: none;">
+            <ui:Label text="Add Device" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; font-size: 16px; color: rgb(229, 219, 219); -unity-font: url(&apos;project://database/Assets/Plugins/TextMesh%20Pro/Fonts/Ubuntu/Ubuntu-Regular.ttf?fileID=12800000&amp;guid=95751beb2e9d83d43a172521fc635db0&amp;type=3#Ubuntu-Regular&apos;);" />
+            <ui:VisualElement style="flex-grow: 1; align-items: stretch;">
+                <ui:TextField picking-mode="Ignore" label="Name:" value="Name" text="Name" />
+                <ui:RadioButtonGroup label="Device Type:" value="-1" style="-unity-text-align: middle-right; font-size: 11px; overflow: visible; align-items: stretch; justify-content: space-around;">
+                    <ui:RadioButton label="Lights" style="-unity-text-align: middle-right; width: 179px;" />
+                    <ui:RadioButton label="Heating" />
+                    <ui:RadioButton label="AC" />
+                    <ui:RadioButton label="Cameras" />
+                </ui:RadioButtonGroup>
+                <ui:TextField picking-mode="Ignore" label="Device Room" value="filler text" text="Room" />
+                <ui:Button text="Add" display-tooltip-when-elided="true" style="position: absolute; top: 145px; left: 373px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -9,39 +9,42 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Mail.unity
-    guid: 33bc1271ed606964e903e5a355572c35
-  - enabled: 1
-    path: Assets/Scenes/NavigationScene.unity
-    guid: 6c7408825b9c95446ac3fc53a8e0ab31
+    path: Assets/Scenes/CallText.unity
+    guid: 2b859b4990ce68a469b89b3e45aa6a4f
   - enabled: 1
     path: Assets/Scenes/Clock.unity
     guid: 03ce77fa1286cbd4aa7c48a1042db2b6
   - enabled: 1
-    path: Assets/Scenes/WeatherScene.unity
-    guid: d5248eafec5cd534a9e47854cdc8f4e9
+    path: Assets/Scenes/Contacts.unity
+    guid: 0e0905c280d860942948214eb29970db
   - enabled: 1
     path: Assets/Scenes/Diary.unity
     guid: 83cc9704932363f4fbad128377f479f5
   - enabled: 1
-    path: Assets/Scenes/Contacts.unity
-    guid: 0e0905c280d860942948214eb29970db
-  - enabled: 1
-    path: Assets/Scenes/SearchScene.unity
-    guid: 826759f198e3e614abd40ccb0422bf22
+    path: Assets/Scenes/Eshop.unity
+    guid: 9101dc9323afa004092da6c1e587a95d
   - enabled: 1
     path: Assets/Scenes/Jobs.unity
     guid: 6fbcc572ba3ca5c488bb42a989e14097
   - enabled: 1
-    path: Assets/Scenes/Eshop.unity
-    guid: 9101dc9323afa004092da6c1e587a95d
+    path: Assets/Scenes/Mail.unity
+    guid: 33bc1271ed606964e903e5a355572c35
+  - enabled: 1
+    path: Assets/Scenes/MusicPlayer.unity
+    guid: 0390eaefe7dbd004195386d9e5b745c1
+  - enabled: 1
+    path: Assets/Scenes/NavigationScene.unity
+    guid: 6c7408825b9c95446ac3fc53a8e0ab31
+  - enabled: 1
+    path: Assets/Scenes/SearchScene.unity
+    guid: 826759f198e3e614abd40ccb0422bf22
+  - enabled: 1
+    path: Assets/Scenes/TrafficScene.unity
+    guid: f20735346e0b9ea4cbeb6126dcdb1255
   - enabled: 1
     path: Assets/Scenes/Translate.unity
     guid: 79dd1c0eaf1d4f54fa0a2c35b3b360b9
   - enabled: 1
-    path: Assets/Scenes/CallText.unity
-    guid: 2b859b4990ce68a469b89b3e45aa6a4f
-  - enabled: 1
-    path: Assets/Scenes/MusicPlayer.unity
-    guid: 0390eaefe7dbd004195386d9e5b745c1
+    path: Assets/Scenes/WeatherScene.unity
+    guid: d5248eafec5cd534a9e47854cdc8f4e9
   m_configObjects: {}

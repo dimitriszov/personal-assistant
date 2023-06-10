@@ -3,11 +3,10 @@ using UnityEngine;
 public class DropdownHandler : MonoBehaviour
 {
     public LevelLoader levelLoader;
-    public DialogTrigger dialogTrigger;
 
     public void Start()
     {
-        dialogTrigger.OpenDialogue();
+
     }
 
     public void HandleInputData(int val)
@@ -38,28 +37,28 @@ public class DropdownHandler : MonoBehaviour
             case 7:
                 levelLoader.loadLevel("Contacts");
                 break;
-            /*case 8:
-                levelLoader.loadLevel("SearchScene");
+            case 8:
+                levelLoader.loadLevel("Eshop");
                 break;
             case 9:
-                levelLoader.loadLevel("SearchScene");
+                levelLoader.loadLevel("Jobs");
                 break;
             case 10:
-                levelLoader.loadLevel("SearchScene");
+                levelLoader.loadLevel("MusicPlayer");
                 break;
             case 11:
-                levelLoader.loadLevel("SearchScene");
+                levelLoader.loadLevel("TrafficScene");
                 break;
             case 12:
-                levelLoader.loadLevel("SearchScene");
+                levelLoader.loadLevel("Translate");
                 break;
-            case 13:
+            /*case 13:
                 levelLoader.loadLevel("SearchScene");
                 break;
             case 14:
                 levelLoader.loadLevel("SearchScene");
                 break;
-                */
+                    */
         }
     }
 }

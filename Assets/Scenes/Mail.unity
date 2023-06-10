@@ -377,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - acrorId: 0
-    message: '<color=#EC3535>No emai Recipient!</color>
+    message: '<color=#EC3535>No email Recipient!</color>
 
 '
   actors:
