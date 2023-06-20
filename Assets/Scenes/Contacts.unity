@@ -686,8 +686,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 71}
-  m_SizeDelta: {x: 300, y: 30}
+  m_AnchoredPosition: {x: 0.41279, y: 58.961}
+  m_SizeDelta: {x: 266.23, y: 54.078}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121887842
 MonoBehaviour:
@@ -722,7 +722,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Give the Name of the Contact:'
+  m_Text: 'Give the Name and the Number of the Contact:'
 --- !u!222 &121887843
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1706,7 +1706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -52}
+  m_AnchoredPosition: {x: 0, y: -33}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &731439904
@@ -3273,7 +3273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -1}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1454412155
@@ -3353,7 +3353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -2}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506142047
@@ -3436,7 +3436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.8, y: 34.099995}
+  m_AnchoredPosition: {x: -1.8, y: 11}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1520387318
@@ -3595,7 +3595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.8, y: -8}
+  m_AnchoredPosition: {x: -1.8, y: -33}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1569469077
@@ -5332,6 +5332,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 560721553449674463, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_text
+      value: "<align=\"center\"><b><color=#A8DADC>Title</color></b>\n<align=\"left\">Hello!!\nWelcome
+        to your personal assistant for organising and managing contacts! I'm going
+        to give you some useful information:\n\n*On your home screen you are presented
+        with a box in which you can choose between three options. The contact list,
+        adding a contact and deleting a contact. \n*Clicking on one of the three
+        options will bring up a new box.\n*If you tap the contact list to search
+        you will have to enter the name and number of the contact you are looking
+        for and tap search. When you have finished you can return to the home page
+        by pressing the button Back.\n* If you press the add contact button you have
+        to enter the name and number of the contact you want to add and then press
+        the add button to save it in the contact list. When you have finished you
+        can return to the home page by pressing the button Back.\n*If you press the
+        delete contact button then you need to enter either the name or the contact
+        number to find the contact. When found you press the delete button and the
+        contact ceases to exist.As in the previous steps to return to the home screen
+        you will press the  button Back. \n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296771934802453927, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: title
       value: Contacts

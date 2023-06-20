@@ -2985,9 +2985,64 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 560721553449674463, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_text
+      value: "<align=\"center\"><b><color=#A8DADC>Title</color></b>\n<align=\"left\">Hello
+        !!!\nWelcome to your personal assistant for setting reminders and alarms!
+        \u0399'm going to give you some useful information:\n\n*Provide the specific
+        time you want the alarm to go off for either a reminder or an alarm clock.
+        \n* Indicate if you want the alarm to go off at AM or PM.\n* When you set
+        the time you want, press the button Set Alarm.\n* Once you've confirmed all
+        the details, the personal assistant will create the alarm for you. It will
+        notify you  at the specified time using a sound.\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296771934802453927, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2577851493996596736, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170593575311016337, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.9515438
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170593575311016337, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.031574413
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170593575311016337, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -36.554
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170593575311016337, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -33.068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170593575311016337, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 19.95398
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170593575311016337, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -16.40799
       objectReference: {fileID: 0}
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: title
