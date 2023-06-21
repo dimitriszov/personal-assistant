@@ -1537,6 +1537,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_text
+      value: "<align=\"center\"><b><color=#A8DADC>Text/Call</color></b>\n<align=\"left\">Usage:\nPress
+        any key on your keyboard or click on Enter text... to start writing.\nPress
+        enter to sent message.\nThe message contains the following information:\n\tSent
+        from ...\n\tTime/date\nOn the left information on the selected contact will
+        be displayed.\nPressing the Call button will call the contact."
+      objectReference: {fileID: 0}
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: title
       value: Chat

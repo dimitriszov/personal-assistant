@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_text
+      value: "<align=\"center\"><b><color=#A8DADC>Music</color></b>\n<align=\"left\">Usage:\n\tButtons:\n\t\tPress
+        the pause button to pause.\n\t\tPress the play button to play.\n\t\tPress
+        the Skip front to skip the song.\n\t\tPress the Skip back to skip the song
+        and\n\t\tlisten to the previous.\n\t\tPressing the mute mutes the player
+        and \n\t\tpressing the unmute unmutes the\n\t\tplayer.\n\t\tWhen the play
+        button is pressed it changes \n\t\tto the diamond button which does nothing\n\t\tbut
+        exists for aesthetic reasons.\nThe player contains a list of songs.\nSkipping
+        while the music is playing auto-starts the next song.\nThe slider cannot
+        be moved by the user."
+      objectReference: {fileID: 0}
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: title
       value: Music Player
