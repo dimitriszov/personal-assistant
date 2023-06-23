@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using Newtonsoft.Json;
+using Unity.Jobs;
 
 public class SaveManager : MonoBehaviour
 {
@@ -80,11 +81,16 @@ public class SaveManager : MonoBehaviour
 
     public void deleteSchedule()
     {
-
-        PlayerPrefs.DeleteKey("SavedText");
-        PlayerPrefs.Save();
-
-        Debug.Log("Delete");
+        string selectedDate = dateText.text;
+        if (calendarData.ContainsKey(selectedDate))
+        {
+            calendarData.Remove(selectedDate);
+        }
+        else
+        {
+            return;
+        }
+        SaveCalendarData();
     }
 
     public void OnButtonClick()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.IO;
 
 public class ContactManager : MonoBehaviour
 {
@@ -31,8 +32,6 @@ public class ContactManager : MonoBehaviour
             Name = name;
             PhoneNumber = phoneNumber;
         }
-
-
     }
 
     public void Start()
@@ -86,6 +85,7 @@ public class ContactManager : MonoBehaviour
       */
         addNameInputField.text = string.Empty; // Clear the input field
         addNumberInputField.text = string.Empty; // Clear the input field
+        SaveContactsToJson();
     }
 
     public Contact ParseContactInfo(string contactInfo)
@@ -186,5 +186,31 @@ public class ContactManager : MonoBehaviour
         }
     }
 
+    private void SaveContactsToJson()
+    {
+        // Convert the list of contacts to a JSON string
+        string json = JsonUtility.ToJson(new ContactList(contacts));
+
+        // Specify the file path where you want to save the JSON file
+        string filePath = Application.dataPath + "/contacts.json";
+
+        // Write the JSON string to the file
+        File.WriteAllText(filePath, json);
+
+        Debug.Log("Contacts saved to JSON file: " + filePath);
+    }
+    // Helper class to wrap the list of contacts
+    [Serializable]
+    public class ContactList
+    {
+        public List<Contact> contacts;
+
+        public ContactList(List<Contact> contacts)
+        {
+            this.contacts = contacts;
+        }
+    }
 }
+
+
 
