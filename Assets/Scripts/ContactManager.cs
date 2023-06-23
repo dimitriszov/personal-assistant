@@ -6,7 +6,6 @@ using System;
 
 public class ContactManager : MonoBehaviour
 {
-
     [SerializeField] public List<Contact> contacts;
     [SerializeField]
     public InputField searchByNameInputField;
