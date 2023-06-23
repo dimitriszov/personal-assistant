@@ -104,6 +104,7 @@ public class ContactManager : MonoBehaviour
         Debug.Log("Save");
     }
 
+
     public void DeleteContact()
     {
         string name = contactInputField.text.Trim();
@@ -114,12 +115,14 @@ public class ContactManager : MonoBehaviour
             contacts.Remove(contactToDelete);
             // Save or update the contacts in the storage mechanism
             SaveContacts();
-            // Refresh the contact search list
-           // DisplaySearchResults();
+           
         }
         contactInputField.text = string.Empty;
+        contactInputFieldNumber.text = string.Empty; // Clear the phone number input field
         Debug.Log("Delete");
     }
+
+
 
     public Contact FindContact(string contactName, string contatcNumber)
     {
