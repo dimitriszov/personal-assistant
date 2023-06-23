@@ -67,22 +67,9 @@ public class ContactManager : MonoBehaviour
         {
             contacts.Add(newContact);
             SaveContacts();
-            // Refresh the contact search list
-            //DisplaySearchResults("");
+          
         }
-        /* string contactInfo = contactInputField.text;
-         string contactInfoN = contactInputFieldNumber.text;
-
-       Contact newContact = ParseContactInfo(contactInfo);
-
-        if (newContact != null)
-        {
-            contacts.Add(newContact);
-            SaveContacts();
-            // Refresh the contact search list
-            DisplaySearchResults("");
-        }
-      */
+       
         addNameInputField.text = string.Empty; // Clear the input field
         addNumberInputField.text = string.Empty; // Clear the input field
         SaveContactsToJson();
@@ -160,7 +147,11 @@ public class ContactManager : MonoBehaviour
             Debug.LogError("Text reference is not assigned.");
             return;
         }
-        List<Contact> searchResults = SearchContactsByName(name);
+
+        // Clear the previous search results
+        searchResultsText.text = "";
+
+        List<Contact> searchResults = new List<Contact>();
 
         if (string.IsNullOrEmpty(name))
         {
@@ -173,18 +164,14 @@ public class ContactManager : MonoBehaviour
             searchResults = SearchContactsByName(name);
         }
 
-        // Clear the search results UI
-       // searchResultsText.text = string.Empty;
-        // Clear the search results UI
-      //  searchResultsText.text = string.Empty;
-
         // Display the search results
         foreach (Contact result in searchResults)
         {
             searchResultsText.text += result.Name + ": " + result.PhoneNumber + "\n";
-            Debug.Log("Contact: " + result.Name + ": " + result.PhoneNumber + "\n" );
+            Debug.Log("Contact: " + result.Name + ": " + result.PhoneNumber + "\n");
         }
     }
+
 
     private void SaveContactsToJson()
     {
