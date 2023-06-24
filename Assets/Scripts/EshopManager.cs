@@ -4,10 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class EshopManager : MonoBehaviour
 {
+    public TMP_Text sumText;
     [SerializeField] public Transform container;
     [SerializeField] public GameObject prefab;
     [SerializeField] public Transform cartContainer;
@@ -124,6 +126,7 @@ public class EshopManager : MonoBehaviour
 
     public void showCartItems()
     {
+        EmptyContainer(cartContainer);
         // Count the occurrences of each EshopItem
         var itemOccurrences = cartItems
             .GroupBy(item => item)
@@ -134,6 +137,8 @@ public class EshopManager : MonoBehaviour
                 Price = group.Key.getPrice()
             });
 
+        float sum = 0.0f;
+
         // Display the results
         foreach (var occurrence in itemOccurrences)
         {
@@ -143,7 +148,20 @@ public class EshopManager : MonoBehaviour
                 cartItem.setNameText(occurrence.Item.getName());
                 cartItem.setCountText(occurrence.Count.ToString());
                 cartItem.setPriceText((occurrence.Price * occurrence.Count).ToString());
+                sum += occurrence.Price * occurrence.Count;
             }
+        }
+        sumText.text = sum.ToString() + " $";
+    }
+
+    public void EmptyContainer(Transform container)
+    {
+        // Iterate through each child of the container
+        for (int i = container.childCount - 1; i >= 0; i--)
+        {
+            Transform child = container.GetChild(i);
+            // Destroy the child game object
+            Destroy(child.gameObject);
         }
     }
 }

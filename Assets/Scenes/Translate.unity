@@ -1238,6 +1238,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_text
+      value: "<align=\"center\"><b><color=#A8DADC>Translate Help</color></b>\n<align=\"left\">In
+        this page you are able to translate a text into a language of you liking.\nIn
+        order for me to translate your text you need to follow these steps:\n\t1.
+        Select the language of the text (or let the translator detect the language)\n\t2.
+        Select the language you want the translated text to be.\n\t3. Input your
+        text in the left field.\n\t4. Press the translate button."
+      objectReference: {fileID: 0}
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: title
       value: Translate

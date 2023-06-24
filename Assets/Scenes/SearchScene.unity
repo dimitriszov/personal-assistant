@@ -413,8 +413,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: abc1048d294f3ae4eb1f1bf7093e7de1, type: 2}
-  m_sharedMaterial: {fileID: -6564069152529238977, guid: abc1048d294f3ae4eb1f1bf7093e7de1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 109530e4f4822d840861326cec5c2a3a, type: 2}
+  m_sharedMaterial: {fileID: 6209367367525867603, guid: 109530e4f4822d840861326cec5c2a3a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1241,8 +1241,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: abc1048d294f3ae4eb1f1bf7093e7de1, type: 2}
-  m_sharedMaterial: {fileID: -6564069152529238977, guid: abc1048d294f3ae4eb1f1bf7093e7de1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 109530e4f4822d840861326cec5c2a3a, type: 2}
+  m_sharedMaterial: {fileID: 6209367367525867603, guid: 109530e4f4822d840861326cec5c2a3a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1673,6 +1673,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_text
+      value: '<align="center"><b><color=#A8DADC>Search Help</color></b>
+
+        <align="left">1.
+        Type your text for the search.
+
+        2. Then, press the search button.'
+      objectReference: {fileID: 0}
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: title
       value: Search
