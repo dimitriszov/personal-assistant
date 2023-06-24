@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
 
 public class Sm : MonoBehaviour
 {
-    public AudioClip[] AudioClips;
+    public List<AudioClip> AudioClips;
     AudioSource audioSource;
     public int CurrentTrack = 0;
     bool isPlaying = false;
@@ -14,18 +14,15 @@ public class Sm : MonoBehaviour
     public Slider ProgressBar;
     public GameObject Diamond;
     public GameObject PlayButton;
-    
-
-
-
+    public string PathToFolder; // Relative path to the default folder inside Unity Assets
 
     // Start is called before the first frame update
     void Start()
     {
-        
         audioSource = GetComponent<AudioSource>();
-        audioSource.clip = AudioClips[CurrentTrack];
         Diamond.SetActive(false);
+        LoadAudioClips();
+        Play();
     }
 
     // Update is called once per frame
@@ -33,24 +30,46 @@ public class Sm : MonoBehaviour
     {
         Songname.text = AudioClips[CurrentTrack].name;
         ProgressBar.value = Mathf.Clamp01(audioSource.time / 100);
-        if (isPlaying==true )
-        {
-            Diamond.SetActive(true);
-            PlayButton.SetActive(false);
-
-        }
-        else
-        {
-            Diamond.SetActive(false);
-            PlayButton.SetActive(true);
-        }
-
+        Diamond.SetActive(isPlaying);
+        PlayButton.SetActive(!isPlaying);
     }
+
+    void LoadAudioClips()
+    {
+        // Clear the existing AudioClips list
+        AudioClips.Clear();
+
+        // Get the absolute path of the default folder inside Unity Assets
+        string folderPath = Path.Combine(Application.dataPath, PathToFolder);
+
+        // Get all MP3 files in the specified folder
+        DirectoryInfo dir = new DirectoryInfo(folderPath);
+        FileInfo[] fileInfo = dir.GetFiles("*.mp3", SearchOption.TopDirectoryOnly);
+
+        // Load each MP3 file as an AudioClip and add it to the list
+        foreach (FileInfo file in fileInfo)
+        {
+            StartCoroutine(LoadAudioClip(file.FullName));
+        }
+    }
+
+    IEnumerator LoadAudioClip(string filePath)
+    {
+        string url = string.Format("file://{0}", filePath);
+        using (var www = new WWW(url))
+        {
+            yield return www;
+            AudioClip clip = www.GetAudioClip();
+            clip.name = Path.GetFileNameWithoutExtension(filePath);
+            AudioClips.Add(clip);
+        }
+    }
+
     void Play()
     {
-
-        if (isPlaying == false)
+        if (!isPlaying)
         {
+            audioSource.clip = AudioClips[CurrentTrack];
             audioSource.Play();
             isPlaying = true;
         }
@@ -76,7 +95,6 @@ public class Sm : MonoBehaviour
     {
         audioSource.Stop();
         isPlaying = false;
-
     }
 
     void StopRaw()
@@ -87,10 +105,7 @@ public class Sm : MonoBehaviour
     void Next()
     {
         StopRaw();
-        if (CurrentTrack == AudioClips.Length - 1)
-            CurrentTrack = 0;
-        else
-            CurrentTrack++;
+        CurrentTrack = (CurrentTrack + 1) % AudioClips.Count;
         audioSource.clip = AudioClips[CurrentTrack];
         if (isPlaying)
         {
@@ -102,31 +117,12 @@ public class Sm : MonoBehaviour
     void Previous()
     {
         StopRaw();
-        if (CurrentTrack == 0)
-            CurrentTrack = AudioClips.Length - 1;
-        else
-            CurrentTrack--;
+        CurrentTrack = (CurrentTrack + AudioClips.Count - 1) % AudioClips.Count;
         audioSource.clip = AudioClips[CurrentTrack];
         if (isPlaying)
         {
-
             isPlaying = false;
             Play();
         }
     }
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
 }
-

@@ -3142,20 +3142,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff3016ba1e95734bb19942436d6d4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioClips:
-  - {fileID: 8300000, guid: 439bdc6dbc9bf75478af6a1797dcd032, type: 3}
-  - {fileID: 8300000, guid: ab9aa265a6d92064e86a31d1c2dccaed, type: 3}
-  - {fileID: 8300000, guid: da8c40a1e58240e438030fe61e21cfe2, type: 3}
-  - {fileID: 8300000, guid: 2bc3cd86b3d2d4a4a87788be390728b8, type: 3}
-  - {fileID: 8300000, guid: a6e79a96dae696d4993bfdd3bb86f72f, type: 3}
-  - {fileID: 8300000, guid: 1e6a9f99f5a823449ad753892928ce25, type: 3}
-  - {fileID: 8300000, guid: 2c784c6931dbf4b4d84e86df000bb223, type: 3}
-  - {fileID: 8300000, guid: 306ae49f8f46c974c84b4cdfdc034a05, type: 3}
+  AudioClips: []
   CurrentTrack: 0
   Songname: {fileID: 327910794}
   ProgressBar: {fileID: 1025588656}
   Diamond: {fileID: 1216496372}
   PlayButton: {fileID: 79265831}
+  PathToFolder: Music
 --- !u!4 &2052596733
 Transform:
   m_ObjectHideFlags: 0
