@@ -214,9 +214,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 187256328759324594, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 334982068706048817, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: title
       value: SmartHome
+      objectReference: {fileID: 0}
+    - target: {fileID: 3398549062705340542, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3912963876301809393, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_Pivot.x
@@ -302,9 +314,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6261232144761653845, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7068121130134375372, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_Name
       value: SettingsObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701618700284237812, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440328073090833562, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3f333addc9d31d4988aa34d00703651, type: 3}

@@ -229,7 +229,6 @@ public class TrafficManager : MonoBehaviour
         foreach (Resource res in trafficResult.ResourceSets[0].Resources)
         {
             result += "<font-weight=\"900\">*</font-weight> <indent=5%>" + res.Description + "</indent>\n";
-            Debug.Log(res.Detour);
             if(!string.IsNullOrEmpty(res.Detour))
                 result += "<color=#FFB703><font-weight=\"800\">></font-weight> <indent=8%>" + res.Detour + "</indent></color>\n";
         }
