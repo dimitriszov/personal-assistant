@@ -46,10 +46,7 @@ public class EshopItem : MonoBehaviour
     }
     public void setImage(string pathFile)
     {
-        var rawData = File.ReadAllBytes(pathFile);
-        Texture2D tex = new Texture2D(2, 2); // Create an empty Texture; size doesn't matter
-        tex.LoadImage(rawData);
-        image.texture = tex;
+        image.texture = Resources.Load<Texture2D>(pathFile);
     }
 
     public void setCartList(List<EshopItem> cartItems)

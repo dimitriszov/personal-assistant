@@ -181,16 +181,16 @@ public class GetWeatherInfo : MonoBehaviour
             humidityText.text = WeatherData.KeyInfo.Humidity.ToString();
             Debug.Log($"Pressure: {WeatherData.KeyInfo.Pressure}");
             pressureText.text = WeatherData.KeyInfo.Pressure.ToString();
-            string pathFile = "Assets/Images/Weather/01d.png";
+            string pathFile = "01d";
             foreach (var condition in WeatherData.WeatherConditions)
             {
                 Debug.Log($"{condition.Group}: {condition.Description}");
                 sb.Append(condition.Group + ": " + condition.Description + "\n");
                 iconCode = condition.Icon;
-                pathFile = $"Assets/Images/Weather/Icons/{condition.Icon}.png";
+                pathFile = $"{condition.Icon}";
             }
             conditionText.text = sb.ToString();
-            var rawData = File.ReadAllBytes(pathFile);
+            // var rawData = File.ReadAllBytes(pathFile);
             if(iconCode.Equals("03d"))
             {
                 changeSkyBox(1);
@@ -219,9 +219,8 @@ public class GetWeatherInfo : MonoBehaviour
                     changeSkyBox(1);
                     break;
             }
-            Texture2D tex = new Texture2D(2, 2); // Create an empty Texture; size doesn't matter
-            tex.LoadImage(rawData);
-            image.texture = tex;
+
+            image.texture = Resources.Load<Texture2D>(pathFile);
         }
     }
 

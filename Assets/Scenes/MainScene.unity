@@ -192,7 +192,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46016744}
-  m_LocalRotation: {x: 0.12217311, y: -0.012795446, z: 0.0015751916, w: 0.9924251}
+  m_LocalRotation: {x: 0.122173116, y: -0.012795439, z: 0.0015751907, w: 0.9924251}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -696,6 +696,22 @@ PrefabInstance:
     - target: {fileID: 3912963876301809393, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215004198807898624, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215004198807898624, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[13].m_Text
+      value: Calls
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215004198807898624, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[14].m_Text
+      value: News
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215004198807898624, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[15].m_Text
+      value: SmartHome Devices
       objectReference: {fileID: 0}
     - target: {fileID: 6261232144761653845, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2729,6 +2745,12 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Translate
       m_Image: {fileID: 0}
+    - m_Text: Calls
+      m_Image: {fileID: 0}
+    - m_Text: News
+      m_Image: {fileID: 0}
+    - m_Text: SmartHome Devices
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2931,7 +2953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584003992}
   m_LocalRotation: {x: 0.093509205, y: -0.012835538, z: 0.0012056241, w: 0.99553496}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0000009536743}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

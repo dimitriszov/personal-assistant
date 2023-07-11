@@ -231,7 +231,7 @@ public class FileBrowserTest : MonoBehaviour
 
     public void createAttachmentonList(string input)
     {
-        var groupBoxTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI Toolkit/attachement.uxml");
+        var groupBoxTemplate = Resources.Load<VisualTreeAsset>("attachement");
         var attachement = groupBoxTemplate.CloneTree();
 
         // Get the label and button elements from the GroupBox
