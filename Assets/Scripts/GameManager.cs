@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject chatPanel, textObject;
     public TMP_InputField chatBox;
+    public GameObject introPanel;
+    public GameObject scrollViewContent;
     bool FLAG = false;
     [SerializeField]
     List<Message> messageList = new List<Message>(); 
@@ -50,8 +52,12 @@ public class GameManager : MonoBehaviour
                 
             }
         }
-        
-      
+        if (introPanel.activeSelf)
+        {
+            ClearScrollViewContent();
+        }
+
+
 
     }
 
@@ -83,6 +89,19 @@ public class GameManager : MonoBehaviour
 
         messageList.Add(newMessage);
     }
+
+    private void ClearScrollViewContent()
+    {
+        // Destroy all children of the scrollViewContent GameObject
+        foreach (Transform child in scrollViewContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Clear the messageList
+        messageList.Clear();
+    }
+
 }
 
 
