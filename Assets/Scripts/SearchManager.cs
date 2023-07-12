@@ -48,6 +48,7 @@ public class SearchManager : MonoBehaviour
 
     IEnumerator GetResults(string query)
     {
+        emptyContainer();
         // Build the API request URL
         string apiUrl = $"https://www.googleapis.com/customsearch/v1?key={APIkey}&cx={searchEngineId}&q={query}";
         //Debug.Log(apiUrl);
@@ -99,6 +100,14 @@ public class SearchManager : MonoBehaviour
             item.setTitleText(title);
             item.setDescriptionText(descr);
             item.setLinkText(link);
+        }
+    }
+
+    public void emptyContainer()
+    {
+        foreach (Transform child in container)
+        {
+            GameObject.Destroy(child.gameObject);
         }
     }
 }
