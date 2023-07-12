@@ -237,7 +237,7 @@ public class TranslateManager : MonoBehaviour
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Post,
-                RequestUri = new Uri("https://google-translate1.p.rapidapi.com/language/translate/v2/detect"),
+                RequestUri = new Uri("https://google-translate1.p.rapidapi.com/language/translate/v2"),
                 Headers =
                 {
                     { "X-RapidAPI-Key", "2b28b4bfa1msh866db562f6172f2p1d2042jsnc115e1b5cef4" },
@@ -255,7 +255,17 @@ public class TranslateManager : MonoBehaviour
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                return body;
+                Debug.Log(body);
+
+                // Parse the JSON string
+                TranslationData translationData = JsonUtility.FromJson<TranslationData>(body);
+
+                // Access the translatedText field
+                string translatedText = translationData.data.translations[0].translatedText;
+
+                // Output the result
+                Debug.Log(translatedText);
+                return translatedText;
             }
         }
     }
@@ -267,13 +277,12 @@ public class TranslateManager : MonoBehaviour
         if (string.IsNullOrWhiteSpace(text))
             return;
         string sourceLanguage = "";
-        string targetLanguage = languageCodes[targetLanguageDropdown.name];
+        string targetLanguage = languageCodes[targetLanguageDropdown.options[targetLanguageDropdown.value].text];
 
         int initialIndex = initialLanguageDropdown.value;
         if (initialIndex == 0)
         {
             string detectedLanguageJson = await DetectLanguage(inputField.text);
-            Debug.Log(detectedLanguageJson);
 
             // Parse the JSON response
             JObject jsonResponse = JObject.Parse(detectedLanguageJson);
@@ -287,4 +296,22 @@ public class TranslateManager : MonoBehaviour
         }
         output.text = await TranslateText(text, targetLanguage, sourceLanguage);
     }
+}
+
+[System.Serializable]
+public class TranslationData
+{
+    public TranslationContainer data;
+}
+
+[System.Serializable]
+public class TranslationContainer
+{
+    public Translation[] translations;
+}
+
+[System.Serializable]
+public class Translation
+{
+    public string translatedText;
 }
