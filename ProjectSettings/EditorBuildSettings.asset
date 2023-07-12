@@ -36,8 +36,14 @@ EditorBuildSettings:
     path: Assets/Scenes/NavigationScene.unity
     guid: 6c7408825b9c95446ac3fc53a8e0ab31
   - enabled: 1
+    path: Assets/Scenes/NewsApp.unity
+    guid: dd764d9226bf0314fa12959b35c50b1c
+  - enabled: 1
     path: Assets/Scenes/SearchScene.unity
     guid: 826759f198e3e614abd40ccb0422bf22
+  - enabled: 1
+    path: Assets/Scenes/SmartHome.unity
+    guid: 4368f756d49f2d244a4088828f04500d
   - enabled: 1
     path: Assets/Scenes/TrafficScene.unity
     guid: f20735346e0b9ea4cbeb6126dcdb1255

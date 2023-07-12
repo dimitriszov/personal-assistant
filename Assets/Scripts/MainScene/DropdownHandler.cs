@@ -52,13 +52,15 @@ public class DropdownHandler : MonoBehaviour
             case 12:
                 levelLoader.loadLevel("Translate");
                 break;
-            /*case 13:
-                levelLoader.loadLevel("SearchScene");
+            case 13:
+                levelLoader.loadLevel("CallText");
                 break;
             case 14:
-                levelLoader.loadLevel("SearchScene");
+                levelLoader.loadLevel("NewsApp");
                 break;
-                    */
+            case 15:
+                levelLoader.loadLevel("SmartHome");
+                break;
         }
     }
 }

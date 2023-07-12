@@ -119,7 +119,7 @@ public class EshopManager : MonoBehaviour
         int i = 0;
         foreach (Phone phone in phones)
         {
-            addItem(phone.Name, phone.Price.ToString(), "Assets/Images/Eshop/Images/" + i.ToString() + ".png");
+            addItem(phone.Name, phone.Price.ToString(), "Eshop/Images/" + i.ToString());
             i++;
         }
     }
