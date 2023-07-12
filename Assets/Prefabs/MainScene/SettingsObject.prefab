@@ -7549,6 +7549,12 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Translate
       m_Image: {fileID: 0}
+    - m_Text: Calls
+      m_Image: {fileID: 0}
+    - m_Text: News
+      m_Image: {fileID: 0}
+    - m_Text: SmartHome Devices
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
