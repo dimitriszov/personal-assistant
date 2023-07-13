@@ -820,6 +820,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.1100159
       objectReference: {fileID: 0}
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_text
+      value: '<align="center"><b><color=#A8DADC>Navigation Help</color></b>
+
+        <align="left">1.
+        Select if you want Extendend report (Show reroutes)
+
+        2. Select the
+        radius for the info displayed.
+
+        3. Search.'
+      objectReference: {fileID: 0}
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: title
       value: Traffic
@@ -2249,7 +2261,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 488222514}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.999988
+  m_Size: 0.99972296
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2616,7 +2628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -221.55905}
+  m_AnchoredPosition: {x: 0, y: -221.55907}
   m_SizeDelta: {x: -58, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845633862

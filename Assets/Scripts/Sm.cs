@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +13,7 @@ public class Sm : MonoBehaviour
     public Slider ProgressBar;
     public GameObject Diamond;
     public GameObject PlayButton;
-    public string PathToFolder; // Relative path to the default folder inside Unity Assets
+    public string PathToFolder; // Relative path to the default folder inside "Resources"
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +21,14 @@ public class Sm : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         Diamond.SetActive(false);
         LoadAudioClips();
-        Play();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         Songname.text = AudioClips[CurrentTrack].name;
-        ProgressBar.value = Mathf.Clamp01(audioSource.time / 100);
+        ProgressBar.value = Mathf.Clamp01(audioSource.time / AudioClips[CurrentTrack].length);
         Diamond.SetActive(isPlaying);
         PlayButton.SetActive(!isPlaying);
     }
@@ -39,30 +38,11 @@ public class Sm : MonoBehaviour
         // Clear the existing AudioClips list
         AudioClips.Clear();
 
-        // Get the absolute path of the default folder inside Unity Assets
-        string folderPath = Path.Combine(Application.dataPath, PathToFolder);
+        // Load all AudioClips from the specified folder in "Resources"
+        AudioClip[] clips = Resources.LoadAll<AudioClip>(PathToFolder);
 
-        // Get all MP3 files in the specified folder
-        DirectoryInfo dir = new DirectoryInfo(folderPath);
-        FileInfo[] fileInfo = dir.GetFiles("*.mp3", SearchOption.TopDirectoryOnly);
-
-        // Load each MP3 file as an AudioClip and add it to the list
-        foreach (FileInfo file in fileInfo)
-        {
-            StartCoroutine(LoadAudioClip(file.FullName));
-        }
-    }
-
-    IEnumerator LoadAudioClip(string filePath)
-    {
-        string url = string.Format("file://{0}", filePath);
-        using (var www = new WWW(url))
-        {
-            yield return www;
-            AudioClip clip = www.GetAudioClip();
-            clip.name = Path.GetFileNameWithoutExtension(filePath);
-            AudioClips.Add(clip);
-        }
+        // Add the loaded AudioClips to the list
+        AudioClips.AddRange(clips);
     }
 
     void Play()

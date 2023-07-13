@@ -587,6 +587,13 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1250648817105676746, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
+      propertyPath: m_text
+      value: '<align="center"><b><color=#A8DADC>Email Help</color></b>
+
+        <align="left">Here
+        you can send an email after connecting with google.'
+      objectReference: {fileID: 0}
     - target: {fileID: 3323787468614293309, guid: f3f333addc9d31d4988aa34d00703651, type: 3}
       propertyPath: Help
       value: '<align="center"><b><color=#A8DADC>Title</color></b>

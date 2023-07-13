@@ -178,9 +178,9 @@ public class GetWeatherInfo : MonoBehaviour
             Debug.Log($"Temperature: {WeatherData.KeyInfo.Temperature}");
             tempText.text = WeatherData.KeyInfo.Temperature.ToString();
             Debug.Log($"Humidity: {WeatherData.KeyInfo.Humidity}");
-            humidityText.text = WeatherData.KeyInfo.Humidity.ToString();
+            humidityText.text = $"Humidity: {WeatherData.KeyInfo.Humidity}";
             Debug.Log($"Pressure: {WeatherData.KeyInfo.Pressure}");
-            pressureText.text = WeatherData.KeyInfo.Pressure.ToString();
+            pressureText.text = $"Pressure: {WeatherData.KeyInfo.Pressure}";
             string pathFile = "01d";
             foreach (var condition in WeatherData.WeatherConditions)
             {
